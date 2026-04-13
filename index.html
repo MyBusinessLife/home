@@ -27,7 +27,7 @@
 
     <title>MY BUSINESS LIFE | Sites web, automatisations, stratégie digitale et outils métier</title>
     <link rel="preload" href="assets/logo.png" as="image" />
-    <link rel="stylesheet" href="styles.css?v=10" />
+    <link rel="stylesheet" href="styles.css?v=11" />
 
     <script type="application/ld+json">
       {
@@ -69,30 +69,56 @@
       </button>
 
       <nav class="site-nav" id="primary-navigation" aria-label="Navigation principale">
-        <a href="#top">Accueil</a>
+        <a href="./">Accueil</a>
         <div class="nav-group">
-          <button class="nav-link nav-menu-button" type="button" aria-expanded="false" aria-controls="services-menu">
-            Services
+          <button class="nav-link nav-menu-button" type="button" aria-expanded="false" aria-controls="individuals-menu">
+            Particuliers
           </button>
-          <div class="nav-dropdown" id="services-menu">
-            <a href="#services">
-              <span>Vue d’ensemble</span>
-              <small>Sites, automatisations, outils métier, stratégie.</small>
+          <div class="nav-dropdown" id="individuals-menu">
+            <a href="particuliers.html">
+              <span>Accueil particuliers</span>
+              <small>Aide digitale, réparation, diagnostic simple.</small>
             </a>
-            <a href="#diagnostic">
-              <span>Diagnostic digital</span>
-              <small>Comprendre vos priorités avant d’investir.</small>
+            <a href="services/reparation-ordinateur.html">
+              <span>Réparation ordinateur</span>
+              <small>Diagnostic, remise en état, conseils clairs.</small>
             </a>
-            <a href="#ressources">
-              <span>Ressources</span>
-              <small>Ebook, guides et contenus utiles.</small>
+            <a href="contact.html">
+              <span>Besoin d’aide</span>
+              <small>Expliquer votre situation en quelques minutes.</small>
             </a>
           </div>
         </div>
-        <a href="#a-propos">À propos</a>
-        <a href="#diagnostic">Diagnostic en ligne</a>
-        <a href="#ressources">Ressources</a>
-        <a class="nav-cta" href="https://calendly.com/contact-mybusinesslife/etude-de-besoins-logiciel-sur-mesure" target="_blank" rel="noopener">
+        <div class="nav-group">
+          <button class="nav-link nav-menu-button" type="button" aria-expanded="false" aria-controls="business-menu">
+            Professionnels
+          </button>
+          <div class="nav-dropdown" id="business-menu">
+            <a href="professionnels.html">
+              <span>Accueil professionnels</span>
+              <small>Structurer, vendre, automatiser, piloter.</small>
+            </a>
+            <a href="services/developpement-web.html">
+              <span>Développement web</span>
+              <small>Sites, pages de conversion, interfaces.</small>
+            </a>
+            <a href="services/developpement-logiciel.html">
+              <span>Développement logiciel</span>
+              <small>Outils métier, CRM, dashboards, portails.</small>
+            </a>
+            <a href="services/automatisation.html">
+              <span>Automatisations</span>
+              <small>Relances, données, process, productivité.</small>
+            </a>
+            <a href="services/strategie-digitale.html">
+              <span>Stratégie digitale</span>
+              <small>Diagnostic, priorités, plan d’action.</small>
+            </a>
+          </div>
+        </div>
+        <a href="a-propos.html">À propos</a>
+        <a href="https://mybusinesslife.github.io/mbl-ebook-lead-magnet/">Ebook</a>
+        <a class="nav-cta" href="contact.html">
           Contact
         </a>
       </nav>
@@ -112,7 +138,7 @@
             <a class="button button-primary" href="https://calendly.com/contact-mybusinesslife/etude-de-besoins-logiciel-sur-mesure" target="_blank" rel="noopener">
               Demander une étude gratuite
             </a>
-            <a class="button button-secondary" href="#diagnostic">Faire le point</a>
+            <a class="button button-secondary" href="contact.html">Faire le point</a>
           </div>
 
           <div class="hero-signals" aria-label="Engagements MY BUSINESS LIFE">
@@ -179,6 +205,33 @@
         </div>
       </section>
 
+      <section class="visual-strip light-section" aria-label="Aperçus MY BUSINESS LIFE">
+        <figure class="photo-card tall tilt-card" data-animate>
+          <img
+            src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80"
+            alt="Espace de travail moderne avec ordinateurs et lumière naturelle"
+            loading="lazy"
+          />
+          <figcaption>Des expériences digitales nettes, utiles et crédibles.</figcaption>
+        </figure>
+        <figure class="photo-card tilt-card" data-animate style="--delay: 90ms">
+          <img
+            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1000&q=80"
+            alt="Écran affichant du code et un environnement de développement"
+            loading="lazy"
+          />
+          <figcaption>Des outils qui s’adaptent à votre manière de travailler.</figcaption>
+        </figure>
+        <figure class="photo-card tilt-card" data-animate style="--delay: 160ms">
+          <img
+            src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=80"
+            alt="Carte électronique et composants informatiques en réparation"
+            loading="lazy"
+          />
+          <figcaption>Une aide concrète, du conseil au matériel.</figcaption>
+        </figure>
+      </section>
+
       <section id="profils" class="profile-section light-section" aria-labelledby="profiles-title">
         <div class="section-heading" data-animate>
           <p class="eyebrow dark">Vous vous reconnaissez ici</p>
@@ -190,26 +243,26 @@
         </div>
 
         <div class="profile-grid">
-          <article class="profile-card" data-animate style="--delay: 40ms">
+          <a class="profile-card" href="particuliers.html" data-animate style="--delay: 40ms">
             <span>Particulier</span>
             <h3>J’ai une idée ou une démarche à digitaliser.</h3>
             <p>On vous aide à rendre votre projet clair, présentable et réalisable, sans vocabulaire technique inutile.</p>
-          </article>
-          <article class="profile-card" data-animate style="--delay: 100ms">
+          </a>
+          <a class="profile-card" href="professionnels.html" data-animate style="--delay: 100ms">
             <span>Indépendant</span>
             <h3>Je veux être plus visible et mieux organisé.</h3>
             <p>Site, prise de rendez-vous, suivi client, supports : votre activité devient plus lisible.</p>
-          </article>
-          <article class="profile-card" data-animate style="--delay: 160ms">
+          </a>
+          <a class="profile-card" href="professionnels.html" data-animate style="--delay: 160ms">
             <span>Entreprise</span>
             <h3>Je veux gagner du temps et piloter plus proprement.</h3>
             <p>Process, automatisations, CRM, outils métier et tableaux de bord adaptés à vos usages.</p>
-          </article>
-          <article class="profile-card" data-animate style="--delay: 220ms">
+          </a>
+          <a class="profile-card" href="professionnels.html" data-animate style="--delay: 220ms">
             <span>Projet en croissance</span>
             <h3>Je veux passer un cap sans bricolage.</h3>
             <p>On structure le socle digital pour que votre croissance ne repose pas sur des outils dispersés.</p>
-          </article>
+          </a>
         </div>
       </section>
 
@@ -226,36 +279,36 @@
         </div>
 
         <div class="solution-grid">
-          <article class="solution-card premium" data-animate style="--delay: 40ms">
+          <a class="solution-card premium" href="services/strategie-digitale.html" data-animate style="--delay: 40ms">
             <span>01</span>
             <h3>Stratégie digitale &amp; diagnostic</h3>
             <p>Clarifier vos objectifs, vos priorités, vos blocages et le chemin le plus rentable.</p>
-          </article>
-          <article class="solution-card" data-animate style="--delay: 90ms">
+          </a>
+          <a class="solution-card" href="services/developpement-web.html" data-animate style="--delay: 90ms">
             <span>02</span>
             <h3>Sites web & pages de conversion</h3>
             <p>Créer une présence crédible, élégante et pensée pour transformer les visiteurs en contacts.</p>
-          </article>
-          <article class="solution-card" data-animate style="--delay: 140ms">
+          </a>
+          <a class="solution-card" href="services/automatisation.html" data-animate style="--delay: 140ms">
             <span>03</span>
             <h3>Automatisations &amp; productivité</h3>
             <p>Connecter vos outils, réduire la saisie, automatiser les relances et fluidifier le quotidien.</p>
-          </article>
-          <article class="solution-card" data-animate style="--delay: 190ms">
+          </a>
+          <a class="solution-card" href="services/developpement-logiciel.html" data-animate style="--delay: 190ms">
             <span>04</span>
             <h3>Outils métier & logiciels sur mesure</h3>
             <p>Construire l’interface dont votre activité a vraiment besoin, sans fonctionnalités parasites.</p>
-          </article>
-          <article class="solution-card" data-animate style="--delay: 240ms">
+          </a>
+          <a class="solution-card" href="professionnels.html" data-animate style="--delay: 240ms">
             <span>05</span>
             <h3>CRM, suivi client &amp; pilotage</h3>
             <p>Mieux gérer les demandes, les ventes, les interventions, les données et les décisions.</p>
-          </article>
-          <article class="solution-card" data-animate style="--delay: 290ms">
+          </a>
+          <a class="solution-card" href="a-propos.html" data-animate style="--delay: 290ms">
             <span>06</span>
             <h3>Image, contenus & supports</h3>
             <p>Rendre votre message plus clair avec des supports modernes, cohérents et professionnels.</p>
-          </article>
+          </a>
         </div>
       </section>
 
@@ -268,7 +321,7 @@
             une idée, un besoin ou une activité en système clair. Notre rôle : comprendre votre réalité,
             simplifier les décisions et créer des solutions utiles, élégantes et durables.
           </p>
-          <a class="button button-secondary" href="#diagnostic">Lancer un diagnostic</a>
+          <a class="button button-secondary" href="a-propos.html">Découvrir MY BUSINESS LIFE</a>
         </div>
 
         <div class="about-mosaic" aria-label="Méthode MY BUSINESS LIFE">
@@ -296,7 +349,7 @@
             à prendre de meilleures décisions, à gagner du temps et à créer une relation plus simple
             avec vos clients, vos équipes ou vos projets.
           </p>
-          <a class="button button-primary" href="https://calendly.com/contact-mybusinesslife/etude-de-besoins-logiciel-sur-mesure" target="_blank" rel="noopener">
+          <a class="button button-primary" href="contact.html">
             Parler de mon besoin
           </a>
         </div>
@@ -384,7 +437,7 @@
               <p>Un plan clair : quoi faire, dans quel ordre, avec quel niveau de priorité.</p>
             </div>
           </div>
-          <a class="button button-primary" href="https://calendly.com/contact-mybusinesslife/etude-de-besoins-logiciel-sur-mesure" target="_blank" rel="noopener">
+          <a class="button button-primary" href="contact.html">
             Démarrer le diagnostic
           </a>
         </div>
@@ -439,7 +492,7 @@
       <section class="final-cta" aria-labelledby="final-title" data-animate="scale">
         <p class="eyebrow">Étude gratuite</p>
         <h2 id="final-title">Une idée, un blocage, un projet ou une activité à structurer ? Parlons-en.</h2>
-        <a class="button button-primary" href="https://calendly.com/contact-mybusinesslife/etude-de-besoins-logiciel-sur-mesure" target="_blank" rel="noopener">
+        <a class="button button-primary" href="contact.html">
           Réserver mon créneau
         </a>
       </section>
@@ -454,14 +507,14 @@
         </span>
       </a>
       <nav aria-label="Navigation pied de page">
-        <a href="#services">Services</a>
-        <a href="#a-propos">À propos</a>
-        <a href="#diagnostic">Diagnostic</a>
+        <a href="professionnels.html">Professionnels</a>
+        <a href="particuliers.html">Particuliers</a>
+        <a href="a-propos.html">À propos</a>
         <a href="https://mybusinesslife.github.io/mbl-ebook-lead-magnet/">Ebook</a>
-        <a href="https://calendly.com/contact-mybusinesslife/etude-de-besoins-logiciel-sur-mesure" target="_blank" rel="noopener">Contact</a>
+        <a href="contact.html">Contact</a>
       </nav>
     </footer>
 
-    <script src="script.js?v=10"></script>
+    <script src="script.js?v=11"></script>
   </body>
 </html>

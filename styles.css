@@ -1481,3 +1481,366 @@ p {
     transform: none;
   }
 }
+
+.site-nav .is-active {
+  background: rgba(255, 106, 46, 0.12);
+  color: var(--white);
+}
+
+.visual-strip,
+.page-hero,
+.story-section,
+.service-catalog,
+.service-detail,
+.contact-grid,
+.form-section,
+.process-section {
+  width: min(var(--max), calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.visual-strip {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr 0.9fr;
+  gap: 16px;
+  padding: 54px 0 32px;
+}
+
+.photo-card,
+.page-hero-media {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(7, 19, 28, 0.12);
+  border-radius: var(--radius);
+  background: var(--navy);
+  box-shadow: 0 24px 70px rgba(7, 19, 28, 0.14);
+}
+
+.photo-card {
+  min-height: 320px;
+  margin: 0;
+  color: var(--white);
+}
+
+.photo-card.tall {
+  min-height: 430px;
+}
+
+.photo-card img,
+.page-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition:
+    transform 900ms var(--ease),
+    filter 900ms var(--ease);
+}
+
+.photo-card::after,
+.page-hero-media::after {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, transparent 35%, rgba(6, 19, 28, 0.82)),
+    linear-gradient(135deg, rgba(255, 106, 46, 0.22), transparent 44%);
+  content: "";
+}
+
+.photo-card:hover img,
+.page-hero-media:hover img {
+  filter: saturate(1.08);
+  transform: scale(1.045);
+}
+
+.photo-card figcaption {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  left: 18px;
+  z-index: 1;
+  color: var(--white);
+  font-size: 1.08rem;
+  font-weight: 900;
+  line-height: 1.18;
+}
+
+.page-main {
+  color: var(--ink);
+}
+
+.page-hero {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 0.94fr) minmax(420px, 0.8fr);
+  gap: 48px;
+  align-items: center;
+  min-height: 680px;
+  padding: 84px 0 78px;
+  color: var(--white);
+}
+
+.page-hero::before,
+.page-hero::after {
+  position: absolute;
+  pointer-events: none;
+  content: "";
+}
+
+.page-hero::before {
+  top: -120px;
+  left: 50%;
+  bottom: 0;
+  z-index: -2;
+  width: 100vw;
+  background:
+    radial-gradient(ellipse at 70% 10%, rgba(28, 143, 163, 0.22), transparent 42%),
+    linear-gradient(180deg, var(--navy), #07131c 100%);
+  transform: translateX(-50%);
+}
+
+.page-hero::after {
+  top: -120px;
+  left: 50%;
+  bottom: 0;
+  z-index: -1;
+  width: 100vw;
+  background-image:
+    linear-gradient(rgba(247, 249, 252, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(247, 249, 252, 0.026) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(to bottom, black 0%, transparent 78%);
+  transform: translateX(-50%);
+}
+
+.page-hero-copy p:not(.eyebrow) {
+  max-width: 710px;
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: 1.15rem;
+}
+
+.page-hero-media {
+  min-height: 500px;
+}
+
+.story-section,
+.service-catalog,
+.service-detail,
+.contact-grid {
+  padding: 82px 0;
+}
+
+.value-grid,
+.detail-grid,
+.contact-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.value-grid,
+.detail-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 34px;
+}
+
+.value-grid article,
+.detail-grid article,
+.contact-card {
+  border: 1px solid var(--dark-line);
+  border-radius: var(--radius);
+  background: #ffffff;
+  box-shadow: 0 18px 40px rgba(7, 19, 28, 0.06);
+  padding: 22px;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.value-grid article:hover,
+.detail-grid article:hover,
+.contact-card:hover {
+  border-color: rgba(28, 143, 163, 0.24);
+  box-shadow: 0 24px 55px rgba(7, 19, 28, 0.1);
+  transform: translateY(-3px);
+}
+
+.value-grid span,
+.detail-grid span,
+.contact-card span {
+  display: inline-flex;
+  margin-bottom: 38px;
+  border-radius: 999px;
+  background: rgba(255, 106, 46, 0.13);
+  color: #8f2f0e;
+  font-size: 0.78rem;
+  font-weight: 900;
+  padding: 6px 10px;
+}
+
+.value-grid p,
+.detail-grid p,
+.contact-card p {
+  margin-top: 12px;
+  color: var(--soft-text-muted);
+}
+
+.contact-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.contact-card h2 {
+  color: var(--ink);
+  font-size: 1.45rem;
+}
+
+.contact-card a {
+  display: inline-flex;
+  margin-top: 22px;
+  color: #0b5d6c;
+  font-weight: 900;
+}
+
+.form-section,
+.process-section {
+  margin-bottom: 82px;
+}
+
+.form-section p,
+.process-section p {
+  color: var(--muted);
+}
+
+.contact-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.contact-form label {
+  display: grid;
+  gap: 8px;
+  color: var(--muted);
+  font-weight: 850;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid rgba(247, 249, 252, 0.18);
+  border-radius: var(--radius);
+  background: rgba(247, 249, 252, 0.08);
+  color: var(--white);
+  font: inherit;
+  padding: 13px 14px;
+}
+
+.contact-form option {
+  color: var(--ink);
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.full-field,
+.contact-form .button,
+.form-status {
+  grid-column: 1 / -1;
+}
+
+.form-status {
+  min-height: 1.4em;
+  color: var(--muted);
+}
+
+.timeline {
+  display: grid;
+  gap: 14px;
+}
+
+.timeline > div {
+  border: 1px solid rgba(247, 249, 252, 0.15);
+  border-radius: var(--radius);
+  background: rgba(247, 249, 252, 0.075);
+  padding: 18px;
+}
+
+.timeline strong {
+  color: var(--white);
+}
+
+.tilt-card {
+  transform-style: preserve-3d;
+}
+
+.js-enabled .tilt-card.is-visible {
+  transform:
+    perspective(1000px)
+    rotateX(var(--tilt-y, 0deg))
+    rotateY(var(--tilt-x, 0deg));
+}
+
+@media (max-width: 1120px) {
+  .visual-strip,
+  .page-hero,
+  .value-grid,
+  .detail-grid,
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .page-hero {
+    min-height: auto;
+  }
+
+  .page-hero-media {
+    min-height: 420px;
+  }
+
+  .contact-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .visual-strip,
+  .page-hero,
+  .story-section,
+  .service-catalog,
+  .service-detail,
+  .contact-grid,
+  .form-section,
+  .process-section {
+    width: min(100% - 24px, var(--max));
+  }
+
+  .visual-strip,
+  .page-hero,
+  .value-grid,
+  .detail-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .visual-strip,
+  .story-section,
+  .service-catalog,
+  .service-detail,
+  .contact-grid {
+    padding: 54px 0;
+  }
+
+  .page-hero {
+    gap: 28px;
+    padding: 50px 0 54px;
+  }
+
+  .page-hero-media,
+  .photo-card,
+  .photo-card.tall {
+    min-height: 330px;
+  }
+}
