@@ -712,7 +712,7 @@ if (diagnosticApp) {
 
 const quoteServices = {
   web: {
-    label: "Site internet",
+    label: "Site web",
     icon: "WEB",
     insight: "Un projet web dépend surtout de l’objectif, du nombre de pages, des contenus et du niveau de conversion attendu.",
     baseMin: 900,
@@ -765,9 +765,9 @@ const quoteServices = {
     ],
   },
   software: {
-    label: "Logiciel sur mesure",
+    label: "Logiciel métier",
     icon: "APP",
-    insight: "Un logiciel se chiffre selon le périmètre métier, les utilisateurs, les données, les intégrations et le niveau de sécurité.",
+    insight: "Un logiciel métier dépend du périmètre, des utilisateurs, des données, des intégrations et du niveau de sécurité.",
     baseMin: 3000,
     baseMax: 8500,
     timeMin: 4,
@@ -820,7 +820,7 @@ const quoteServices = {
     ],
   },
   repair: {
-    label: "Réparation ordinateur",
+    label: "Réparation PC",
     icon: "PC",
     insight: "Une intervention dépend du symptôme, de l’urgence, du nombre d’appareils et de l’importance des données à protéger.",
     baseMin: 60,
@@ -868,7 +868,7 @@ const quoteServices = {
   automation: {
     label: "Automatisation",
     icon: "AUTO",
-    insight: "Une automatisation se chiffre selon le nombre de tâches, les outils à connecter et le niveau de fiabilité attendu.",
+    insight: "Une automatisation dépend du nombre de tâches, des outils à connecter et du niveau de fiabilité attendu.",
     baseMin: 450,
     baseMax: 1600,
     timeMin: 1,
@@ -960,7 +960,7 @@ const quoteServices = {
     ],
   },
   unsure: {
-    label: "Besoin à clarifier",
+    label: "À clarifier",
     icon: "MBL",
     insight: "Quand le besoin est flou, la bonne réponse commence par une première qualification large.",
     baseMin: 250,
@@ -1047,8 +1047,8 @@ const quoteCommonSteps = [
 const quoteStartStep = {
   id: "type",
   short: "Besoin",
-  title: "Quel besoin voulez-vous qualifier ?",
-  text: "Le parcours change automatiquement selon votre choix.",
+  title: "Quel est votre besoin ?",
+  text: "Choisissez une entrée. Les questions suivantes s’adaptent automatiquement.",
   type: "single",
   options: Object.entries(quoteServices).map(([value, service]) => ({
     value,
