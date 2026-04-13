@@ -1,0 +1,19 @@
+apicg.mybusinesslife.fr {
+  encode zstd gzip
+
+  handle /test {
+    redir /test/ 308
+  }
+
+  handle_path /test/* {
+    root * /var/www/mbl-site-test
+
+    @assets path /assets/* /ebook/assets/* *.css *.js *.png *.jpg *.jpeg *.gif *.webp *.svg *.ico *.woff *.woff2
+    header @assets Cache-Control "public, max-age=604800"
+
+    try_files {path} {path}/ {path}.html
+    file_server
+  }
+
+  reverse_proxy 127.0.0.1:3001
+}
