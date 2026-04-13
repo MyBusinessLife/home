@@ -1319,13 +1319,14 @@ p {
 }
 
 .quote-page {
+  min-height: 100svh;
   background:
     linear-gradient(180deg, rgba(15, 34, 48, 0.98), rgba(20, 52, 71, 0.96) 42%, #f7f9fc 42%),
     var(--navy);
 }
 
 .quote-page-main {
-  padding-top: 104px;
+  padding-top: 96px;
 }
 
 .quote-command-section,
@@ -1336,10 +1337,13 @@ p {
 
 .quote-command-section {
   display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(320px, 0.58fr);
-  gap: 28px;
+  grid-template-columns: 320px minmax(0, 1fr);
+  grid-template-rows: minmax(0, 0.46fr) minmax(0, 0.54fr);
+  gap: 16px;
   align-items: stretch;
-  padding: 54px 0 72px;
+  height: calc(100svh - 118px);
+  min-height: 650px;
+  padding: 12px 0 18px;
 }
 
 .quote-command-copy {
@@ -1348,21 +1352,21 @@ p {
 
 .quote-command-copy h1 {
   max-width: 760px;
-  font-size: 5.2rem;
+  font-size: 2.45rem;
 }
 
 .quote-command-copy > p {
   max-width: 720px;
   color: var(--muted);
-  font-size: 1.14rem;
+  font-size: 0.98rem;
 }
 
 .quote-command-signals {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
+  grid-template-columns: 1fr;
+  gap: 8px;
   max-width: 760px;
-  margin-top: 26px;
+  margin-top: 16px;
 }
 
 .quote-command-signals span {
@@ -1371,7 +1375,7 @@ p {
   border: 1px solid rgba(247, 249, 252, 0.14);
   border-radius: var(--radius);
   background: rgba(247, 249, 252, 0.08);
-  padding: 14px;
+  padding: 10px 12px;
 }
 
 .quote-command-signals strong {
@@ -1385,7 +1389,9 @@ p {
 
 .quote-command-visual {
   position: relative;
-  min-height: 410px;
+  grid-column: 1;
+  grid-row: 2;
+  min-height: 0;
   overflow: hidden;
   border: 1px solid rgba(247, 249, 252, 0.16);
   border-radius: var(--radius);
@@ -1400,7 +1406,6 @@ p {
 .quote-command-visual img {
   width: 100%;
   height: 100%;
-  min-height: inherit;
   object-fit: cover;
   filter: saturate(0.9) contrast(1.04) brightness(0.72);
   transform: scale(1.02);
@@ -1449,10 +1454,12 @@ p {
 }
 
 .quote-builder-shell {
-  grid-column: 1 / -1;
+  grid-row: 1 / 3;
+  grid-column: 2;
   display: grid;
-  grid-template-columns: minmax(230px, 0.28fr) minmax(0, 0.5fr) minmax(260px, 0.22fr);
-  min-height: 680px;
+  grid-template-columns: 200px minmax(0, 1fr) 245px;
+  height: 100%;
+  min-height: 0;
   overflow: hidden;
   border: 1px solid rgba(247, 249, 252, 0.16);
   border-radius: var(--radius);
@@ -1467,9 +1474,9 @@ p {
 .quote-estimate-panel {
   display: grid;
   align-content: start;
-  gap: 20px;
+  gap: 12px;
   min-width: 0;
-  padding: 26px;
+  padding: 16px;
 }
 
 .quote-step-rail {
@@ -1500,22 +1507,22 @@ p {
 
 .quote-step-list {
   display: grid;
-  gap: 8px;
-  margin: 8px 0 0;
+  gap: 6px;
+  margin: 2px 0 0;
   padding: 0;
   list-style: none;
 }
 
 .quote-step-list li {
   display: grid;
-  grid-template-columns: 38px minmax(0, 1fr);
-  gap: 10px;
+  grid-template-columns: 30px minmax(0, 1fr);
+  gap: 8px;
   align-items: center;
   border: 1px solid rgba(247, 249, 252, 0.1);
   border-radius: var(--radius);
   background: rgba(247, 249, 252, 0.06);
   color: var(--muted-soft);
-  padding: 9px;
+  padding: 6px;
   transition:
     background 180ms ease,
     border-color 180ms ease,
@@ -1547,8 +1554,8 @@ p {
 }
 
 .quote-step-list span {
-  width: 34px;
-  height: 34px;
+  width: 28px;
+  height: 28px;
 }
 
 .quote-step-list b {
@@ -1558,7 +1565,7 @@ p {
 }
 
 .quote-rail-note {
-  display: grid;
+  display: none;
   grid-template-columns: 48px minmax(0, 1fr);
   gap: 12px;
   margin-top: 10px;
@@ -1582,8 +1589,8 @@ p {
 .quote-workbench {
   display: grid;
   grid-template-rows: auto minmax(0, 1fr) auto auto;
-  gap: 20px;
-  padding: 28px;
+  gap: 14px;
+  padding: 18px;
 }
 
 .quote-progress-header {
@@ -1619,14 +1626,14 @@ p {
 .quote-question {
   display: grid;
   align-content: start;
-  gap: 18px;
+  gap: 12px;
   animation: diagnosticSlide 360ms var(--ease);
 }
 
 .quote-question h2 {
   max-width: 720px;
   color: var(--ink);
-  font-size: 2.65rem;
+  font-size: 2rem;
   line-height: 1.05;
 }
 
@@ -1634,21 +1641,21 @@ p {
   max-width: 700px;
   margin: 0;
   color: var(--soft-text-muted);
-  font-size: 1.04rem;
+  font-size: 0.96rem;
 }
 
 .quote-options {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
 }
 
 .quote-option {
   position: relative;
   display: grid;
-  grid-template-columns: 48px minmax(0, 1fr);
-  gap: 10px 14px;
-  min-height: 122px;
+  grid-template-columns: 38px minmax(0, 1fr);
+  gap: 8px 10px;
+  min-height: 92px;
   align-items: start;
   border: 1px solid rgba(7, 19, 28, 0.12);
   border-radius: var(--radius);
@@ -1656,7 +1663,7 @@ p {
     linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(247, 249, 252, 0.98));
   color: var(--ink);
   cursor: pointer;
-  padding: 16px;
+  padding: 11px;
   text-align: left;
   transition:
     border-color 180ms ease,
@@ -1686,8 +1693,8 @@ p {
 }
 
 .quote-option > span {
-  width: 48px;
-  height: 48px;
+  width: 38px;
+  height: 38px;
   background: linear-gradient(145deg, rgba(28, 143, 163, 0.16), rgba(255, 106, 46, 0.16));
   color: #0b5d6c;
 }
@@ -1699,13 +1706,19 @@ p {
 
 .quote-option strong {
   padding-right: 16px;
-  font-size: 1rem;
+  font-size: 0.92rem;
+  line-height: 1.22;
 }
 
 .quote-option small {
+  display: -webkit-box;
+  overflow: hidden;
   color: var(--soft-text-muted);
-  font-size: 0.9rem;
+  font-size: 0.82rem;
   font-weight: 650;
+  line-height: 1.3;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 .quote-textarea-label,
@@ -1730,7 +1743,7 @@ p {
 
 .quote-textarea-label textarea,
 .quote-contact-grid textarea {
-  min-height: 150px;
+  min-height: 112px;
   resize: vertical;
 }
 
@@ -1751,7 +1764,7 @@ p {
 }
 
 .quote-actions .button {
-  min-width: 164px;
+  min-width: 150px;
 }
 
 .quote-status {
@@ -1774,8 +1787,8 @@ p {
 
 .quote-estimate-panel > strong {
   color: var(--ink);
-  font-size: 3.1rem;
-  line-height: 0.98;
+  font-size: 1.85rem;
+  line-height: 1.08;
 }
 
 .quote-estimate-panel > p {
@@ -1809,7 +1822,7 @@ p {
 
 .quote-summary-list {
   display: grid;
-  gap: 10px;
+  gap: 8px;
 }
 
 .quote-summary-list div {
@@ -1818,7 +1831,7 @@ p {
   border: 1px solid rgba(7, 19, 28, 0.1);
   border-radius: var(--radius);
   background: rgba(255, 255, 255, 0.7);
-  padding: 12px;
+  padding: 9px;
 }
 
 .quote-summary-list span {
@@ -2293,6 +2306,22 @@ p {
     min-height: auto;
   }
 
+  .quote-command-section {
+    grid-template-rows: auto;
+    height: auto;
+    min-height: auto;
+  }
+
+  .quote-command-visual,
+  .quote-builder-shell {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .quote-builder-shell {
+    height: auto;
+  }
+
   .profile-grid,
   .solution-grid,
   .outcome-grid,
@@ -2319,6 +2348,10 @@ p {
 
   .quote-step-list {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .quote-options {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 

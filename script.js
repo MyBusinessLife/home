@@ -274,7 +274,7 @@ const diagnosticTracks = {
         title: "Qui doit être convaincu par le site ?",
         text: "Décrivez votre cible, votre offre principale et l’action souhaitée.",
         type: "textarea",
-        placeholder: "Exemple : dirigeants de TPE, demande de devis, prise de rendez-vous, image haut de gamme...",
+        placeholder: "Exemple : dirigeants de TPE, demande de contact, prise de rendez-vous, image haut de gamme...",
       },
     ],
   },
@@ -290,7 +290,7 @@ const diagnosticTracks = {
         options: [
           ["crm", "CRM et suivi client"],
           ["planning", "Planning, interventions ou tournées"],
-          ["facturation", "Devis, facturation ou paiements"],
+          ["facturation", "Facturation ou paiements"],
           ["stock", "Stock, produits ou achats"],
           ["dashboard", "Tableaux de bord et reporting"],
           ["portail", "Portail client ou espace équipe"],
@@ -328,7 +328,7 @@ const diagnosticTracks = {
         type: "multi",
         options: [
           ["relances", "Relances clients ou prospects"],
-          ["documents", "Documents, devis ou factures"],
+          ["documents", "Documents et factures"],
           ["emails", "Emails et notifications"],
           ["data", "Synchronisation de données"],
           ["planning", "Planning ou affectation"],
@@ -568,10 +568,10 @@ if (diagnosticApp) {
         <input data-diagnostic-contact="phone" type="tel" autocomplete="tel" value="${escapeHtml(contact.phone)}" />
       </label>
       <label class="diagnostic-field">
-        Budget ou enveloppe
-        <select data-diagnostic-contact="budget">
-          ${["À définir", "Moins de 500€", "500€ à 1 500€", "1 500€ à 5 000€", "5 000€+"]
-            .map((value) => `<option ${contact.budget === value ? "selected" : ""}>${escapeHtml(value)}</option>`)
+        Niveau de projet
+        <select data-diagnostic-contact="level">
+          ${["À définir", "Simple", "Intermédiaire", "Premium", "Évolutif"]
+            .map((value) => `<option ${contact.level === value ? "selected" : ""}>${escapeHtml(value)}</option>`)
             .join("")}
         </select>
       </label>
@@ -726,7 +726,7 @@ const quoteServices = {
         id: "web_goal",
         short: "Objectif",
         title: "Quel résultat le site doit-il produire ?",
-        text: "Choisissez l’objectif prioritaire. C’est lui qui donne le niveau d’exigence du devis.",
+        text: "Choisissez l’objectif prioritaire. C’est lui qui donne le niveau d’exigence du projet.",
         type: "single",
         options: [
           { value: "vitrine", icon: "VIS", label: "Présenter une activité", helper: "Un site crédible, clair et rassurant.", costMin: 0, costMax: 250, timeMin: 0, timeMax: 1, tags: ["image", "clarté"] },
@@ -754,7 +754,7 @@ const quoteServices = {
         id: "web_assets",
         short: "Contenus",
         title: "Où en sont les contenus et l’identité visuelle ?",
-        text: "Plus les éléments sont prêts, plus le budget peut se concentrer sur la qualité de production.",
+        text: "Plus les éléments sont prêts, plus l’effort peut se concentrer sur la qualité de production.",
         type: "single",
         options: [
           { value: "ready", icon: "OK", label: "Logo, textes et images prêts", helper: "Le projet peut avancer vite.", costMin: 0, costMax: 0, timeMin: 0, timeMax: 0 },
@@ -779,12 +779,12 @@ const quoteServices = {
         id: "software_scope",
         short: "Modules",
         title: "Quels modules doivent exister au départ ?",
-        text: "Le devis se construit autour des fonctions vraiment nécessaires au lancement.",
+        text: "La recommandation se construit autour des fonctions vraiment nécessaires au lancement.",
         type: "multi",
         options: [
           { value: "crm", icon: "CRM", label: "CRM et suivi client", costMin: 700, costMax: 2200, timeMin: 1, timeMax: 3, tags: ["CRM"] },
           { value: "planning", icon: "CAL", label: "Planning, interventions ou tournées", costMin: 950, costMax: 3200, timeMin: 2, timeMax: 4, tags: ["planning"] },
-          { value: "billing", icon: "EUR", label: "Devis, facture ou paiement", costMin: 900, costMax: 3600, timeMin: 2, timeMax: 5, tags: ["facturation"] },
+          { value: "billing", icon: "FAC", label: "Facture ou paiement", costMin: 900, costMax: 3600, timeMin: 2, timeMax: 5, tags: ["facturation"] },
           { value: "portal", icon: "USR", label: "Espace client ou équipe", costMin: 1100, costMax: 4200, timeMin: 2, timeMax: 5, tags: ["portail"] },
           { value: "stock", icon: "STK", label: "Stock, achats ou produits", costMin: 950, costMax: 3400, timeMin: 2, timeMax: 4, tags: ["stock"] },
           { value: "dashboard", icon: "KPI", label: "Reporting et tableaux de bord", costMin: 650, costMax: 2600, timeMin: 1, timeMax: 3, tags: ["reporting"] },
@@ -884,7 +884,7 @@ const quoteServices = {
         type: "multi",
         options: [
           { value: "followup", icon: "REL", label: "Relances clients ou prospects", costMin: 180, costMax: 700, timeMin: 0, timeMax: 1, tags: ["relances"] },
-          { value: "documents", icon: "DOC", label: "Documents, devis ou factures", costMin: 350, costMax: 1400, timeMin: 1, timeMax: 2, tags: ["documents"] },
+          { value: "documents", icon: "DOC", label: "Documents et factures", costMin: 350, costMax: 1400, timeMin: 1, timeMax: 2, tags: ["documents"] },
           { value: "data", icon: "SYNC", label: "Synchronisation de données", costMin: 450, costMax: 2200, timeMin: 1, timeMax: 3, tags: ["synchronisation"] },
           { value: "alerts", icon: "NOT", label: "Notifications et alertes", costMin: 180, costMax: 800, timeMin: 0, timeMax: 1, tags: ["alertes"] },
           { value: "reporting", icon: "KPI", label: "Reporting automatique", costMin: 350, costMax: 1600, timeMin: 1, timeMax: 2, tags: ["reporting"] },
@@ -915,7 +915,7 @@ const quoteServices = {
   strategy: {
     label: "Stratégie digitale",
     icon: "PLAN",
-    insight: "Un diagnostic stratégique sert à décider quoi faire, dans quel ordre, avec quel budget et quel objectif de croissance.",
+    insight: "Un diagnostic stratégique sert à décider quoi faire, dans quel ordre, avec quels moyens et quel objectif de croissance.",
     baseMin: 350,
     baseMax: 1200,
     timeMin: 1,
@@ -962,7 +962,7 @@ const quoteServices = {
   unsure: {
     label: "Besoin à clarifier",
     icon: "MBL",
-    insight: "Quand le besoin est flou, le meilleur devis commence par une première qualification large.",
+    insight: "Quand le besoin est flou, la bonne réponse commence par une première qualification large.",
     baseMin: 250,
     baseMax: 1200,
     timeMin: 1,
@@ -1047,7 +1047,7 @@ const quoteCommonSteps = [
 const quoteStartStep = {
   id: "type",
   short: "Besoin",
-  title: "Quel besoin voulez-vous chiffrer ?",
+  title: "Quel besoin voulez-vous qualifier ?",
   text: "Le parcours change automatiquement selon votre choix.",
   type: "single",
   options: Object.entries(quoteServices).map(([value, service]) => ({
@@ -1056,17 +1056,6 @@ const quoteStartStep = {
     label: service.label,
     helper: service.insight,
   })),
-};
-
-const quoteMoney = new Intl.NumberFormat("fr-FR", {
-  style: "currency",
-  currency: "EUR",
-  maximumFractionDigits: 0,
-});
-
-const roundQuote = (value, type) => {
-  const step = type === "repair" ? 10 : 50;
-  return Math.max(step, Math.round(value / step) * step);
 };
 
 const getQuoteTypeFromUrl = () => {
@@ -1087,15 +1076,28 @@ const formatQuoteTimeline = (min, max, unit) => {
   return safeMin === safeMax ? `${safeMin} ${unit}` : `${safeMin} à ${safeMax} ${unit}`;
 };
 
+const getComplexityLabel = (score) => {
+  if (score <= 3) return "Simple";
+  if (score <= 7) return "Intermédiaire";
+  if (score <= 12) return "Structurant";
+  return "Avancé";
+};
+
+const getNextStepLabel = (answers) => {
+  if (!answers.type) return "Choisir un besoin";
+  if (!answers.profile) return "Préciser le contexte";
+  if (!answers.quality_level) return "Définir le niveau attendu";
+  if (!answers.deadline) return "Fixer le timing";
+  return "Brief prêt à transmettre";
+};
+
 const computeQuoteEstimate = (answers) => {
   const type = answers.type || "unsure";
   const service = quoteServices[type] || quoteServices.unsure;
   const steps = getQuoteSteps(answers);
-  let min = service.baseMin;
-  let max = service.baseMax;
   let timeMin = service.timeMin;
   let timeMax = service.timeMax;
-  let factor = 1;
+  let complexityScore = answers.type ? 1 : 0;
   const tags = new Set(service.recommendations);
 
   steps.forEach((question) => {
@@ -1105,25 +1107,20 @@ const computeQuoteEstimate = (answers) => {
     values.forEach((value) => {
       const option = getOptionByValue(question, value);
       if (!option) return;
-      min += option.costMin || 0;
-      max += option.costMax || 0;
       timeMin += option.timeMin || 0;
       timeMax += option.timeMax || 0;
-      factor *= option.factor || 1;
+      complexityScore += Math.max(1, Math.ceil(((option.timeMin || 0) + (option.timeMax || 0)) / 2));
+      if (option.factor && option.factor > 1) complexityScore += 1;
       (option.tags || []).forEach((tag) => tags.add(tag));
     });
   });
-
-  min = roundQuote(min * factor, type);
-  max = roundQuote(Math.max(max * factor, min), type);
 
   return {
     type,
     label: service.label,
     icon: service.icon,
-    min,
-    max,
-    budget: `${quoteMoney.format(min)} à ${quoteMoney.format(max)}`,
+    complexity: answers.type ? getComplexityLabel(complexityScore) : "À préciser",
+    nextStep: getNextStepLabel(answers),
     timeline: formatQuoteTimeline(timeMin, timeMax, service.unit),
     recommendations: [...tags].slice(0, 6),
   };
@@ -1137,7 +1134,7 @@ if (quoteApp) {
   const quoteRailTitle = quoteApp.querySelector("[data-quote-rail-title]");
   const quoteInsight = quoteApp.querySelector("[data-quote-insight]");
   const quoteIcon = quoteApp.querySelector("[data-quote-icon]");
-  const quoteBudget = quoteApp.querySelector("[data-quote-budget]");
+  const quoteFocus = quoteApp.querySelector("[data-quote-focus]");
   const quoteTimeline = quoteApp.querySelector("[data-quote-timeline]");
   const quoteSummary = quoteApp.querySelector("[data-quote-summary]");
   const quotePrev = quoteApp.querySelector("[data-quote-prev]");
@@ -1236,12 +1233,13 @@ if (quoteApp) {
     quoteRailTitle.textContent = estimate.label;
     quoteInsight.textContent = service.insight;
     quoteIcon.textContent = estimate.icon;
-    quoteBudget.textContent = quoteAnswers.type ? estimate.budget : "À calculer";
-    quoteTimeline.textContent = quoteAnswers.type ? `Délai probable : ${estimate.timeline}` : "La fourchette se précise à chaque réponse.";
+    quoteFocus.textContent = quoteAnswers.type ? estimate.complexity : "À préciser";
+    quoteTimeline.textContent = quoteAnswers.type ? `Délai à cadrer : ${estimate.timeline}` : "Vos réponses préparent la recommandation.";
     quoteSummary.innerHTML = `
       <div><span>Besoin</span><strong>${escapeHtml(estimate.label)}</strong></div>
       <div><span>Profil</span><strong>${escapeHtml(quoteAnswers.profile || "À préciser")}</strong></div>
-      <div><span>Timing</span><strong>${escapeHtml(quoteAnswers.deadline || "À préciser")}</strong></div>
+      <div><span>Complexité</span><strong>${escapeHtml(estimate.complexity)}</strong></div>
+      <div><span>Prochaine étape</span><strong>${escapeHtml(estimate.nextStep)}</strong></div>
       <div><span>À prévoir</span><strong>${estimate.recommendations.map(escapeHtml).join(", ")}</strong></div>
     `;
   };
@@ -1294,7 +1292,7 @@ if (quoteApp) {
 
     const estimate = computeQuoteEstimate(quoteAnswers);
     quoteNext.disabled = true;
-    setQuoteStatus("Transmission du diagnostic et de l’estimation...");
+    setQuoteStatus("Transmission du diagnostic...");
 
     try {
       const result = await postLead("quote", {
@@ -1302,7 +1300,7 @@ if (quoteApp) {
         estimate,
         answers: quoteAnswers,
       });
-      setQuoteStatus(`Demande envoyée. Référence : ${result.id}. Votre brief contient déjà une première estimation.`);
+      setQuoteStatus(`Demande envoyée. Référence : ${result.id}. Votre brief est prêt pour une réponse personnalisée.`);
       quoteNext.textContent = "Demande envoyée";
     } catch (_error) {
       quoteNext.disabled = false;
