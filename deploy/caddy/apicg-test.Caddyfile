@@ -5,6 +5,10 @@ apicg.mybusinesslife.fr {
     redir /test/ 308
   }
 
+  handle_path /test/api/* {
+    reverse_proxy 127.0.0.1:3025
+  }
+
   handle_path /test/* {
     root * /var/www/mbl-site-test
 

@@ -4,6 +4,10 @@ http://51.91.78.192 {
 
   respond /health "ok" 200
 
+  handle_path /api/* {
+    reverse_proxy 127.0.0.1:3025
+  }
+
   @assets path /assets/* /ebook/assets/* *.css *.js *.png *.jpg *.jpeg *.gif *.webp *.svg *.ico *.woff *.woff2
   header @assets Cache-Control "public, max-age=604800"
 

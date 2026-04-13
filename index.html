@@ -418,29 +418,37 @@
           </p>
         </div>
 
-        <div class="diagnostic-panel" data-animate="scale">
-          <div class="diagnostic-score">
-            <span>MBL Check</span>
-            <strong>12 min</strong>
-            <p>Un premier échange pour cartographier vos priorités et repérer les gains rapides.</p>
-          </div>
-          <div class="diagnostic-list">
-            <div>
-              <strong>Votre situation</strong>
-              <p>Particulier, indépendant, entreprise ou projet en lancement.</p>
-            </div>
-            <div>
-              <strong>Vos frictions</strong>
-              <p>Visibilité, organisation, outils, conversion, suivi client ou temps perdu.</p>
-            </div>
-            <div>
-              <strong>Votre prochaine étape</strong>
-              <p>Un plan clair : quoi faire, dans quel ordre, avec quel niveau de priorité.</p>
+        <div class="diagnostic-experience" data-diagnostic-app data-animate="scale">
+          <div class="diagnostic-progress" aria-label="Progression du diagnostic">
+            <span data-diagnostic-kicker>Étape 1 sur 6</span>
+            <div class="diagnostic-progress-track" aria-hidden="true">
+              <i data-diagnostic-progress></i>
             </div>
           </div>
-          <a class="button button-primary" href="contact.html">
-            Démarrer le diagnostic
-          </a>
+
+          <div class="diagnostic-layout">
+            <aside class="diagnostic-rail" aria-label="Synthèse du diagnostic">
+              <span>MBL Diagnostic</span>
+              <strong data-diagnostic-focus>Choisissez votre besoin.</strong>
+              <p data-diagnostic-summary>
+                Le parcours s’adapte automatiquement à votre situation pour préparer une demande claire.
+              </p>
+              <div class="diagnostic-signals">
+                <div><small>Durée</small><b>4 à 7 min</b></div>
+                <div><small>Sortie</small><b>Brief qualifié</b></div>
+                <div><small>Réponse</small><b>Priorisée</b></div>
+              </div>
+            </aside>
+
+            <div class="diagnostic-screen">
+              <div class="diagnostic-step" data-diagnostic-step aria-live="polite"></div>
+              <div class="diagnostic-actions">
+                <button class="button button-secondary light" type="button" data-diagnostic-prev>Retour</button>
+                <button class="button button-primary" type="button" data-diagnostic-next>Continuer</button>
+              </div>
+              <p class="diagnostic-status" data-diagnostic-status role="status"></p>
+            </div>
+          </div>
         </div>
       </section>
 

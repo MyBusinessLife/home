@@ -1,0 +1,19 @@
+[Unit]
+Description=MY BUSINESS LIFE diagnostic API
+After=network.target
+
+[Service]
+Type=simple
+User=debian
+WorkingDirectory=/var/www/mbl-diagnostic-api
+Environment=NODE_ENV=production
+Environment=MBL_DIAGNOSTIC_HOST=127.0.0.1
+Environment=MBL_DIAGNOSTIC_PORT=3025
+Environment=MBL_DATA_DIR=/var/www/mbl-site-data
+Environment=MBL_NOTIFY_EMAIL=contact@mybusinesslife.fr
+ExecStart=/usr/bin/node /var/www/mbl-diagnostic-api/diagnostic-api.js
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
