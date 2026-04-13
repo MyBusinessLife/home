@@ -839,15 +839,23 @@ const quoteServices = {
         options: [
           { value: "slow", icon: "SLOW", label: "Ordinateur lent", helper: "Démarrage, logiciels ou navigation très lents.", costMin: 30, costMax: 160, timeMin: 0, timeMax: 1, tags: ["optimisation"] },
           { value: "boot", icon: "BOOT", label: "Ne démarre plus", helper: "Écran noir, boucle, batterie ou système bloqué.", costMin: 60, costMax: 280, timeMin: 1, timeMax: 3, tags: ["panne"] },
+          { value: "screen", icon: "LCD", label: "Écran cassé", helper: "Dalle fissurée, charnière, image noire ou lignes.", costMin: 80, costMax: 360, timeMin: 1, timeMax: 4, tags: ["écran"] },
+          { value: "password", icon: "PASS", label: "Mot de passe perdu", helper: "Session bloquée, compte inaccessible ou récupération.", costMin: 40, costMax: 180, timeMin: 0, timeMax: 2, tags: ["accès"] },
+          { value: "keyboard", icon: "KEY", label: "Clavier ou touchpad", helper: "Touches HS, pavé tactile, clic ou nappe.", costMin: 50, costMax: 220, timeMin: 1, timeMax: 3, tags: ["clavier"] },
+          { value: "battery", icon: "BAT", label: "Batterie ou charge", helper: "Autonomie faible, chargeur, connecteur ou alimentation.", costMin: 50, costMax: 260, timeMin: 1, timeMax: 3, tags: ["alimentation"] },
+          { value: "wifi", icon: "WIFI", label: "Wi-Fi ou réseau", helper: "Connexion instable, imprimante, box ou partage.", costMin: 35, costMax: 180, timeMin: 0, timeMax: 2, tags: ["réseau"] },
           { value: "virus", icon: "SEC", label: "Virus ou sécurité", helper: "Pop-ups, comportement étrange, doute sur un piratage.", costMin: 50, costMax: 240, timeMin: 1, timeMax: 2, tags: ["sécurité"] },
+          { value: "update", icon: "SYS", label: "Windows ou logiciel", helper: "Mises à jour, erreurs, lenteurs applicatives.", costMin: 45, costMax: 220, timeMin: 0, timeMax: 2, tags: ["système"] },
           { value: "data", icon: "DATA", label: "Données à récupérer", helper: "Fichiers importants, sauvegarde ou disque à vérifier.", costMin: 80, costMax: 420, timeMin: 1, timeMax: 5, tags: ["données"] },
+          { value: "noise", icon: "FAN", label: "Bruit ou chauffe", helper: "Ventilation, poussière, pâte thermique ou extinction.", costMin: 50, costMax: 220, timeMin: 1, timeMax: 2, tags: ["refroidissement"] },
+          { value: "other", icon: "?", label: "Autre panne", helper: "Décrivez le comportement observé à l’étape suivante.", costMin: 40, costMax: 220, timeMin: 0, timeMax: 2, tags: ["diagnostic"] },
         ],
       },
       {
         id: "repair_device",
         short: "Matériel",
         title: "Combien d’appareils sont concernés ?",
-        text: "Cela permet d’estimer le temps d’intervention.",
+        text: "Cela aide à organiser la prise en charge.",
         type: "single",
         options: [
           { value: "one", icon: "1", label: "Un ordinateur", helper: "Diagnostic simple.", costMin: 0, costMax: 0, timeMin: 0, timeMax: 0 },
@@ -862,6 +870,104 @@ const quoteServices = {
         text: "Ajoutez le modèle, les messages visibles, les logiciels concernés et ce qui ne doit pas être perdu.",
         type: "textarea",
         placeholder: "Exemple : PC portable Lenovo, écran noir depuis hier, fichiers professionnels à récupérer...",
+      },
+    ],
+  },
+  hardware: {
+    label: "Achat matériel",
+    icon: "MAT",
+    insight: "Le bon matériel dépend de l’usage prévu, de la mobilité, de la configuration souhaitée et du niveau de confort attendu.",
+    baseMin: 0,
+    baseMax: 0,
+    timeMin: 1,
+    timeMax: 5,
+    unit: "jours",
+    recommendations: ["Usage réel", "Configuration adaptée", "Fiabilité", "Installation prête"],
+    questions: [
+      {
+        id: "hardware_category",
+        short: "Matériel",
+        title: "Quel matériel souhaitez-vous acheter ?",
+        text: "Choisissez la famille principale. Le parcours s’adaptera ensuite.",
+        type: "single",
+        options: [
+          { value: "laptop", icon: "LAP", label: "PC portable", helper: "Mobilité, autonomie, écran intégré.", timeMin: 0, timeMax: 1, tags: ["portable"] },
+          { value: "desktop", icon: "FIX", label: "PC fixe", helper: "Confort, puissance, évolutivité.", timeMin: 0, timeMax: 1, tags: ["fixe"] },
+          { value: "workstation", icon: "PRO", label: "Station de travail", helper: "Création, calcul, logiciels exigeants.", timeMin: 1, timeMax: 3, tags: ["performance"] },
+          { value: "mac", icon: "MAC", label: "Mac ou Apple", helper: "MacBook, iMac, iPad ou écosystème Apple.", timeMin: 0, timeMax: 2, tags: ["Apple"] },
+          { value: "screen", icon: "LCD", label: "Écran ou accessoires", helper: "Écran, clavier, souris, dock, webcam.", timeMin: 0, timeMax: 1, tags: ["accessoires"] },
+          { value: "network", icon: "WIFI", label: "Réseau ou imprimante", helper: "Routeur, Wi-Fi, imprimante, stockage réseau.", timeMin: 0, timeMax: 2, tags: ["réseau"] },
+        ],
+      },
+      {
+        id: "hardware_usage",
+        short: "Usage",
+        title: "Quel usage est prévu ?",
+        text: "Cochez les usages importants pour éviter un choix sous-dimensionné.",
+        type: "multi",
+        options: [
+          { value: "office", icon: "DOC", label: "Bureautique", helper: "Documents, mails, navigation, visio.", timeMin: 0, timeMax: 0, tags: ["bureautique"] },
+          { value: "study", icon: "EDU", label: "Études", helper: "Cours, recherches, autonomie, transport.", timeMin: 0, timeMax: 1, tags: ["études"] },
+          { value: "business", icon: "PRO", label: "Usage professionnel", helper: "Fiabilité, sauvegarde, sécurité.", timeMin: 0, timeMax: 1, tags: ["professionnel"] },
+          { value: "creative", icon: "IMG", label: "Photo, vidéo, design", helper: "Écran, mémoire et puissance graphique.", timeMin: 1, timeMax: 3, tags: ["création"] },
+          { value: "gaming", icon: "GPU", label: "Jeux ou 3D", helper: "Carte graphique, refroidissement, écran.", timeMin: 1, timeMax: 3, tags: ["graphique"] },
+          { value: "engineering", icon: "CAD", label: "Logiciels lourds", helper: "CAO, calcul, développement, data.", timeMin: 1, timeMax: 4, tags: ["logiciels lourds"] },
+          { value: "family", icon: "HOME", label: "Famille", helper: "Polyvalence, simplicité, durabilité.", timeMin: 0, timeMax: 1, tags: ["polyvalent"] },
+          { value: "unsure", icon: "?", label: "À conseiller", helper: "Vous voulez une recommandation guidée.", timeMin: 0, timeMax: 1, tags: ["conseil"] },
+        ],
+      },
+      {
+        id: "hardware_ram",
+        short: "RAM",
+        title: "Quelle mémoire RAM souhaitez-vous ?",
+        text: "Si vous ne savez pas, choisissez “à conseiller”.",
+        type: "single",
+        hardwareOnly: true,
+        options: [
+          { value: "8", icon: "8G", label: "8 Go", helper: "Usage simple et bureautique légère.", timeMin: 0, timeMax: 0, tags: ["8 Go RAM"] },
+          { value: "16", icon: "16G", label: "16 Go", helper: "Confort recommandé pour la plupart des usages.", timeMin: 0, timeMax: 0, tags: ["16 Go RAM"] },
+          { value: "32", icon: "32G", label: "32 Go", helper: "Création, multitâche ou usage professionnel.", timeMin: 0, timeMax: 1, tags: ["32 Go RAM"] },
+          { value: "64", icon: "64G", label: "64 Go ou plus", helper: "Travail lourd, data, 3D ou virtualisation.", timeMin: 1, timeMax: 2, tags: ["RAM avancée"] },
+          { value: "advice", icon: "MBL", label: "À conseiller", helper: "MBL recommande selon votre usage réel.", timeMin: 0, timeMax: 0, tags: ["conseil RAM"] },
+        ],
+      },
+      {
+        id: "hardware_storage",
+        short: "Stockage",
+        title: "Quel stockage souhaitez-vous ?",
+        text: "Indiquez l’espace souhaité pour les fichiers, logiciels et sauvegardes.",
+        type: "single",
+        hardwareOnly: true,
+        options: [
+          { value: "256", icon: "256", label: "256 Go SSD", helper: "Usage léger, cloud ou peu de fichiers.", timeMin: 0, timeMax: 0, tags: ["256 Go SSD"] },
+          { value: "512", icon: "512", label: "512 Go SSD", helper: "Bon équilibre pour un usage courant.", timeMin: 0, timeMax: 0, tags: ["512 Go SSD"] },
+          { value: "1tb", icon: "1T", label: "1 To SSD", helper: "Confort pour projets, photos, vidéos.", timeMin: 0, timeMax: 1, tags: ["1 To SSD"] },
+          { value: "2tb", icon: "2T", label: "2 To ou plus", helper: "Gros volumes et usages avancés.", timeMin: 1, timeMax: 2, tags: ["stockage avancé"] },
+          { value: "advice", icon: "MBL", label: "À conseiller", helper: "MBL dimensionne selon votre besoin.", timeMin: 0, timeMax: 0, tags: ["conseil stockage"] },
+        ],
+      },
+      {
+        id: "hardware_preferences",
+        short: "Critères",
+        title: "Quels critères comptent le plus ?",
+        text: "Cochez les contraintes qui doivent guider la recommandation.",
+        type: "multi",
+        options: [
+          { value: "new", icon: "NEW", label: "Neuf", helper: "Garantie et durée de vie prioritaires.", timeMin: 0, timeMax: 1, tags: ["neuf"] },
+          { value: "refurb", icon: "REF", label: "Reconditionné", helper: "Bon rapport qualité et sobriété.", timeMin: 0, timeMax: 1, tags: ["reconditionné"] },
+          { value: "battery", icon: "BAT", label: "Bonne autonomie", helper: "Important pour mobilité ou études.", timeMin: 0, timeMax: 1, tags: ["autonomie"] },
+          { value: "light", icon: "KG", label: "Léger et transportable", helper: "Poids, taille et chargeur compact.", timeMin: 0, timeMax: 1, tags: ["mobilité"] },
+          { value: "screen_quality", icon: "LCD", label: "Bel écran", helper: "Confort visuel, couleurs, taille.", timeMin: 0, timeMax: 1, tags: ["écran"] },
+          { value: "setup", icon: "SET", label: "Installation incluse", helper: "Transfert, logiciels, comptes, sécurité.", timeMin: 1, timeMax: 2, tags: ["installation"] },
+        ],
+      },
+      {
+        id: "hardware_context",
+        short: "Détails",
+        title: "Ajoutez les précisions utiles.",
+        text: "Marque préférée, logiciels utilisés, contraintes, ancien matériel, accessoires souhaités.",
+        type: "textarea",
+        placeholder: "Exemple : PC portable pour comptabilité, visio et déplacements, 16 Go RAM si possible, écran confortable, installation Office...",
       },
     ],
   },
@@ -995,8 +1101,8 @@ const quoteServices = {
   },
 };
 
-const quoteCommonSteps = [
-  {
+const quoteCommonSteps = {
+  profile: {
     id: "profile",
     short: "Profil",
     title: "Vous venez avec quel profil ?",
@@ -1009,7 +1115,7 @@ const quoteCommonSteps = [
       { value: "association", icon: "ORG", label: "Association ou structure", helper: "Organisation, communication, besoins opérationnels.", costMin: 0, costMax: 350 },
     ],
   },
-  {
+  quality_level: {
     id: "quality_level",
     short: "Niveau",
     title: "Quel niveau de finition attendez-vous ?",
@@ -1022,7 +1128,7 @@ const quoteCommonSteps = [
       { value: "unknown", icon: "?", label: "À définir ensemble", helper: "Le diagnostic sert justement à trancher.", costMin: 0, costMax: 450, tags: ["cadrage"] },
     ],
   },
-  {
+  deadline: {
     id: "deadline",
     short: "Timing",
     title: "Quel timing avez-vous en tête ?",
@@ -1035,14 +1141,22 @@ const quoteCommonSteps = [
       { value: "explore", icon: "CAL", label: "Je compare les options", helper: "Besoin de comprendre avant de décider.", costMin: 0, costMax: 0, factor: 0.96, timeMin: 1, timeMax: 2 },
     ],
   },
-  {
+  contact: {
     id: "contact",
     short: "Contact",
     title: "Où peut-on vous envoyer le retour qualifié ?",
     text: "Ajoutez vos coordonnées et une précision importante pour recevoir une réponse utile.",
     type: "contact",
   },
-];
+};
+
+const quoteDefaultCommonStepIds = ["profile", "quality_level", "deadline", "contact"];
+const quoteServiceCommonStepIds = {
+  repair: ["profile", "deadline", "contact"],
+  hardware: ["profile", "deadline", "contact"],
+};
+
+const pcHardwareCategories = new Set(["laptop", "desktop", "workstation", "mac"]);
 
 const quoteStartStep = {
   id: "type",
@@ -1063,12 +1177,31 @@ const getQuoteTypeFromUrl = () => {
   return params.get("type") || params.get("diagnostic") || "";
 };
 
-const getQuoteSteps = (answers) => {
+const getServiceQuestions = (answers) => {
   const service = quoteServices[answers.type] || quoteServices.unsure;
-  return [quoteStartStep, quoteCommonSteps[0], ...service.questions, quoteCommonSteps[1], quoteCommonSteps[2], quoteCommonSteps[3]];
+  if (answers.type !== "hardware") return service.questions;
+
+  const shouldAskPcConfig = pcHardwareCategories.has(answers.hardware_category);
+  return service.questions.filter((question) => !question.hardwareOnly || shouldAskPcConfig);
+};
+
+const getQuoteSteps = (answers) => {
+  const commonStepIds = quoteServiceCommonStepIds[answers.type] || quoteDefaultCommonStepIds;
+  const commonSteps = commonStepIds.map((stepId) => quoteCommonSteps[stepId]);
+  return [quoteStartStep, commonSteps[0], ...getServiceQuestions(answers), ...commonSteps.slice(1)];
 };
 
 const getOptionByValue = (question, value) => question.options?.find((option) => option.value === value);
+
+const isQuoteAnswerComplete = (step, answers) => {
+  const value = answers[step.id];
+  if (step.type === "multi") return Array.isArray(value) && value.length > 0;
+  if (step.type === "contact") {
+    const contact = answers.contact || {};
+    return Boolean(contact.name && contact.email && contact.email.includes("@"));
+  }
+  return Boolean(value);
+};
 
 const formatQuoteTimeline = (min, max, unit) => {
   const safeMin = Math.max(1, Math.round(min));
@@ -1085,10 +1218,8 @@ const getComplexityLabel = (score) => {
 
 const getNextStepLabel = (answers) => {
   if (!answers.type) return "Choisir un besoin";
-  if (!answers.profile) return "Préciser le contexte";
-  if (!answers.quality_level) return "Définir le niveau attendu";
-  if (!answers.deadline) return "Fixer le timing";
-  return "Brief prêt à transmettre";
+  const nextStep = getQuoteSteps(answers).find((step) => step.id !== "type" && !isQuoteAnswerComplete(step, answers));
+  return nextStep ? nextStep.short : "Brief prêt à transmettre";
 };
 
 const computeQuoteEstimate = (answers) => {
@@ -1155,6 +1286,13 @@ if (quoteApp) {
     quoteStatus.style.color = isError ? "#8f2f0e" : "#0b5d6c";
   };
 
+  const pruneQuoteAnswers = () => {
+    const allowedStepIds = new Set(getQuoteSteps(quoteAnswers).map((step) => step.id));
+    Object.keys(quoteAnswers).forEach((key) => {
+      if (!allowedStepIds.has(key)) delete quoteAnswers[key];
+    });
+  };
+
   const syncQuoteInputs = () => {
     quoteStepContainer.querySelectorAll("[data-quote-textarea]").forEach((input) => {
       quoteAnswers[input.dataset.quoteTextarea] = input.value.trim();
@@ -1169,11 +1307,7 @@ if (quoteApp) {
 
   const setQuoteAnswer = (question, value) => {
     quoteAnswers[question.id] = value;
-    if (question.id === "type") {
-      Object.keys(quoteAnswers).forEach((key) => {
-        if (!["type", "profile", "quality_level", "deadline", "contact"].includes(key)) delete quoteAnswers[key];
-      });
-    }
+    pruneQuoteAnswers();
     renderQuote();
   };
 
@@ -1218,13 +1352,7 @@ if (quoteApp) {
   const isQuoteStepValid = () => {
     syncQuoteInputs();
     const question = getQuoteSteps(quoteAnswers)[quoteIndex];
-    const value = quoteAnswers[question.id];
-    if (question.type === "multi") return Array.isArray(value) && value.length > 0;
-    if (question.type === "contact") {
-      const contact = quoteAnswers.contact || {};
-      return Boolean(contact.name && contact.email && contact.email.includes("@"));
-    }
-    return Boolean(value);
+    return isQuoteAnswerComplete(question, quoteAnswers);
   };
 
   const renderQuoteSummary = () => {
