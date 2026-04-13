@@ -27,7 +27,7 @@
 
     <title>MY BUSINESS LIFE | Sites web, automatisations, stratégie digitale et outils métier</title>
     <link rel="preload" href="assets/logo.png" as="image" />
-    <link rel="stylesheet" href="styles.css?v=12" />
+    <link rel="stylesheet" href="styles.css?v=13" />
 
     <script type="application/ld+json">
       {
@@ -117,6 +117,7 @@
           </div>
         </div>
         <a href="a-propos.html">À propos</a>
+        <a href="diagnostic.html">Diagnostic</a>
         <a href="blog/">Blog</a>
         <a href="/ebook/">Ebook</a>
         <a class="nav-cta" href="contact.html">
@@ -418,36 +419,21 @@
           </p>
         </div>
 
-        <div class="diagnostic-experience" data-diagnostic-app data-animate="scale">
-          <div class="diagnostic-progress" aria-label="Progression du diagnostic">
-            <span data-diagnostic-kicker>Étape 1 sur 6</span>
-            <div class="diagnostic-progress-track" aria-hidden="true">
-              <i data-diagnostic-progress></i>
-            </div>
+        <div class="diagnostic-teaser" data-animate="scale">
+          <div>
+            <span>Outil de devis</span>
+            <h3>Un parcours complet pour qualifier votre besoin et obtenir une première estimation.</h3>
+            <p>
+              Le diagnostic dédié couvre les demandes web, logiciels, automatisations, stratégie digitale
+              et réparation ordinateur avec une synthèse exploitable.
+            </p>
+            <a class="button button-primary" href="diagnostic.html">Ouvrir le diagnostic</a>
           </div>
-
-          <div class="diagnostic-layout">
-            <aside class="diagnostic-rail" aria-label="Synthèse du diagnostic">
-              <span>MBL Diagnostic</span>
-              <strong data-diagnostic-focus>Choisissez votre besoin.</strong>
-              <p data-diagnostic-summary>
-                Le parcours s’adapte automatiquement à votre situation pour préparer une demande claire.
-              </p>
-              <div class="diagnostic-signals">
-                <div><small>Durée</small><b>4 à 7 min</b></div>
-                <div><small>Sortie</small><b>Brief qualifié</b></div>
-                <div><small>Réponse</small><b>Priorisée</b></div>
-              </div>
-            </aside>
-
-            <div class="diagnostic-screen">
-              <div class="diagnostic-step" data-diagnostic-step aria-live="polite"></div>
-              <div class="diagnostic-actions">
-                <button class="button button-secondary light" type="button" data-diagnostic-prev>Retour</button>
-                <button class="button button-primary" type="button" data-diagnostic-next>Continuer</button>
-              </div>
-              <p class="diagnostic-status" data-diagnostic-status role="status"></p>
-            </div>
+          <div class="diagnostic-teaser-grid" aria-label="Parcours disponibles">
+            <a href="diagnostic.html?type=web"><strong>WEB</strong><span>Site internet</span></a>
+            <a href="diagnostic.html?type=software"><strong>APP</strong><span>Logiciel métier</span></a>
+            <a href="diagnostic.html?type=repair"><strong>PC</strong><span>Réparation</span></a>
+            <a href="diagnostic.html?type=automation"><strong>AUTO</strong><span>Automatisation</span></a>
           </div>
         </div>
       </section>
@@ -583,6 +569,7 @@
         </div>
         <div class="footer-column">
           <strong>Ressources</strong>
+          <a href="diagnostic.html">Diagnostic et devis</a>
           <a href="blog/">Blog</a>
           <a href="/ebook/">Ebook</a>
           <a href="contact.html">Contact</a>
@@ -601,6 +588,6 @@
       </div>
     </footer>
 
-    <script src="script.js?v=12"></script>
+    <script src="script.js?v=13"></script>
   </body>
 </html>

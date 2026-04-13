@@ -122,7 +122,7 @@ const handleSubmission = async (request, response) => {
     const source = String(parsed.source || request.headers.referer || "").slice(0, 500);
     const payload = sanitizePayload(parsed.payload);
 
-    if (!["diagnostic", "contact"].includes(type)) {
+    if (!["diagnostic", "contact", "quote"].includes(type)) {
       json(response, 400, { ok: false, error: "invalid_type" });
       return;
     }
