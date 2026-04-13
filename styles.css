@@ -260,6 +260,7 @@ button {
 .outcome-section,
 .diagnostic-section,
 .resource-section,
+.blog-section,
 .faq-section,
 .final-cta,
 .site-footer {
@@ -730,7 +731,11 @@ p {
 .light-section,
 .solutions-section,
 .diagnostic-section,
-.resource-section {
+.resource-section,
+.blog-section,
+.blog-index,
+.article-section,
+.legal-section {
   color: var(--ink);
 }
 
@@ -741,6 +746,10 @@ p {
 .outcome-section,
 .diagnostic-section,
 .resource-section,
+.blog-section,
+.blog-index,
+.article-section,
+.legal-section,
 .faq-section,
 .final-cta {
   padding: 84px 0;
@@ -757,19 +766,27 @@ p {
 .outcome-grid p,
 .diagnostic-list p,
 .resource-copy p,
+.blog-card p,
+.article-body p,
+.article-body li,
+.legal-card p,
+.legal-panel p,
 .faq-list p {
   color: var(--soft-text-muted);
 }
 
 .section-heading > p,
 .split-heading > p,
-.resource-copy > p {
+.resource-copy > p,
+.article-intro {
   font-size: 1.06rem;
 }
 
 .profile-grid,
 .solution-grid,
-.outcome-grid {
+.outcome-grid,
+.blog-grid,
+.legal-grid {
   display: grid;
   gap: 16px;
   margin-top: 34px;
@@ -781,6 +798,8 @@ p {
 
 .profile-card,
 .solution-card,
+.blog-card,
+.legal-card,
 .outcome-grid > div,
 .faq-list details {
   border: 1px solid var(--dark-line);
@@ -792,6 +811,8 @@ p {
 
 .profile-card,
 .solution-card,
+.blog-card,
+.legal-card,
 .outcome-grid > div {
   transition:
     border-color 180ms ease,
@@ -801,6 +822,8 @@ p {
 
 .profile-card:hover,
 .solution-card:hover,
+.blog-card:hover,
+.legal-card:hover,
 .outcome-grid > div:hover {
   border-color: rgba(28, 143, 163, 0.24);
   box-shadow: 0 24px 55px rgba(7, 19, 28, 0.1);
@@ -824,7 +847,9 @@ p {
 }
 
 .profile-card h3,
-.solution-card h3 {
+.solution-card h3,
+.blog-card h3,
+.legal-card h3 {
   color: var(--ink);
 }
 
@@ -1075,6 +1100,131 @@ p {
   padding: 6px 10px;
 }
 
+.blog-section {
+  display: grid;
+  gap: 34px;
+}
+
+.blog-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.blog-card {
+  position: relative;
+  display: grid;
+  align-content: start;
+  min-height: 100%;
+  overflow: hidden;
+  padding: 0;
+}
+
+.blog-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.blog-card-content {
+  display: grid;
+  gap: 12px;
+  padding: 22px;
+}
+
+.blog-card small,
+.article-meta {
+  color: #0b5d6c;
+  font-size: 0.78rem;
+  font-weight: 950;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.blog-card p {
+  margin: 0;
+}
+
+.article-section,
+.legal-section,
+.blog-index {
+  width: min(var(--max), calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.article-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 0.28fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.article-body,
+.legal-panel {
+  border: 1px solid var(--dark-line);
+  border-radius: var(--radius);
+  background: #ffffff;
+  box-shadow: 0 22px 55px rgba(7, 19, 28, 0.07);
+  padding: 34px;
+}
+
+.article-body h2,
+.legal-panel h2 {
+  margin-top: 34px;
+  color: var(--ink);
+  font-size: 1.7rem;
+}
+
+.article-body h2:first-child,
+.legal-panel h2:first-child {
+  margin-top: 0;
+}
+
+.article-body ul,
+.legal-panel ul {
+  display: grid;
+  gap: 10px;
+  padding-left: 1.2em;
+}
+
+.article-aside {
+  position: sticky;
+  top: 104px;
+  display: grid;
+  gap: 14px;
+  border: 1px solid rgba(247, 249, 252, 0.16);
+  border-radius: var(--radius);
+  background: var(--navy);
+  box-shadow: var(--shadow);
+  color: var(--white);
+  padding: 22px;
+}
+
+.article-aside p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.legal-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.legal-card span {
+  display: inline-flex;
+  margin-bottom: 34px;
+  border-radius: 999px;
+  background: rgba(28, 143, 163, 0.13);
+  color: #0b5d6c;
+  font-size: 0.78rem;
+  font-weight: 900;
+  padding: 6px 10px;
+}
+
+.legal-panel.notice {
+  border-color: rgba(255, 106, 46, 0.24);
+  background:
+    linear-gradient(145deg, rgba(255, 106, 46, 0.1), rgba(28, 143, 163, 0.08)),
+    #ffffff;
+}
+
 .faq-list {
   display: grid;
   gap: 12px;
@@ -1114,13 +1264,18 @@ p {
 }
 
 .site-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
+  display: grid;
+  grid-template-columns: minmax(260px, 0.9fr) minmax(0, 1.6fr);
+  gap: 34px;
   border-top: 1px solid rgba(7, 19, 28, 0.13);
   color: var(--ink);
-  padding: 34px 0 46px;
+  padding: 46px 0 52px;
+}
+
+.footer-intro {
+  display: grid;
+  align-content: start;
+  gap: 18px;
 }
 
 .footer-brand .brand-mark {
@@ -1135,12 +1290,65 @@ p {
   color: var(--soft-text-muted);
 }
 
-.site-footer nav {
+.footer-intro p,
+.footer-note,
+.footer-column a,
+.footer-column small {
+  color: var(--soft-text-muted);
+}
+
+.footer-intro p {
+  max-width: 380px;
+  margin: 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.footer-column {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+}
+
+.footer-column strong {
+  color: var(--ink);
+  font-size: 0.84rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.footer-column a {
+  display: inline-flex;
+  width: fit-content;
+  font-weight: 850;
+  transition:
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.footer-column a:hover {
+  color: #0b5d6c;
+  transform: translateX(3px);
+}
+
+.footer-bottom {
+  grid-column: 1 / -1;
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
-  color: var(--soft-text);
-  font-weight: 850;
+  justify-content: space-between;
+  border-top: 1px solid rgba(7, 19, 28, 0.11);
+  padding-top: 20px;
+}
+
+.footer-note {
+  margin: 0;
+  font-size: 0.9rem;
 }
 
 @keyframes stageFloat {
@@ -1222,7 +1430,9 @@ p {
   .split-heading,
   .dark-panel,
   .diagnostic-panel,
-  .resource-section {
+  .resource-section,
+  .article-layout,
+  .site-footer {
     grid-template-columns: 1fr;
   }
 
@@ -1232,8 +1442,15 @@ p {
 
   .profile-grid,
   .solution-grid,
-  .outcome-grid {
+  .outcome-grid,
+  .blog-grid,
+  .legal-grid,
+  .footer-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .article-aside {
+    position: static;
   }
 
   .diagnostic-panel {
@@ -1315,6 +1532,10 @@ p {
   .outcome-section,
   .diagnostic-section,
   .resource-section,
+  .blog-section,
+  .blog-index,
+  .article-section,
+  .legal-section,
   .faq-section,
   .final-cta,
   .site-footer {
@@ -1346,7 +1567,8 @@ p {
   .hero-text,
   .section-heading > p,
   .split-heading > p,
-  .resource-copy > p {
+  .resource-copy > p,
+  .article-intro {
     font-size: 1rem;
   }
 
@@ -1394,6 +1616,10 @@ p {
   .outcome-section,
   .diagnostic-section,
   .resource-section,
+  .blog-section,
+  .blog-index,
+  .article-section,
+  .legal-section,
   .faq-section {
     padding: 54px 0;
   }
@@ -1401,12 +1627,17 @@ p {
   .profile-grid,
   .solution-grid,
   .outcome-grid,
-  .about-mosaic {
+  .about-mosaic,
+  .blog-grid,
+  .legal-grid,
+  .footer-grid {
     grid-template-columns: 1fr;
   }
 
   .profile-card,
-  .solution-card {
+  .solution-card,
+  .blog-card,
+  .legal-card {
     min-height: auto;
   }
 
@@ -1421,6 +1652,8 @@ p {
 
   .dark-panel,
   .diagnostic-panel,
+  .article-body,
+  .legal-panel,
   .final-cta {
     padding: 28px;
   }
@@ -1434,6 +1667,10 @@ p {
   }
 
   .site-footer {
+    display: grid;
+  }
+
+  .footer-bottom {
     display: grid;
   }
 }
@@ -1494,7 +1731,10 @@ p {
 .service-detail,
 .contact-grid,
 .form-section,
-.process-section {
+.process-section,
+.blog-index,
+.article-section,
+.legal-section {
   width: min(var(--max), calc(100% - 40px));
   margin-inline: auto;
 }
@@ -1788,7 +2028,8 @@ p {
   .page-hero,
   .value-grid,
   .detail-grid,
-  .contact-grid {
+  .contact-grid,
+  .article-layout {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -1813,7 +2054,10 @@ p {
   .service-detail,
   .contact-grid,
   .form-section,
-  .process-section {
+  .process-section,
+  .blog-index,
+  .article-section,
+  .legal-section {
     width: min(100% - 24px, var(--max));
   }
 
@@ -1821,7 +2065,8 @@ p {
   .page-hero,
   .value-grid,
   .detail-grid,
-  .contact-grid {
+  .contact-grid,
+  .article-layout {
     grid-template-columns: 1fr;
   }
 
@@ -1829,7 +2074,10 @@ p {
   .story-section,
   .service-catalog,
   .service-detail,
-  .contact-grid {
+  .contact-grid,
+  .blog-index,
+  .article-section,
+  .legal-section {
     padding: 54px 0;
   }
 

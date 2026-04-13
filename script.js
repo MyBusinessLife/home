@@ -1,3 +1,35 @@
+const PRODUCTION_DOMAIN = "https://mybusinesslife.fr";
+const SOURCE_ROUTE_MAP = Object.freeze({
+  "/home/": "/",
+  "/home/index.html": "/",
+  "/home/contact.html": "/contact",
+  "/home/a-propos.html": "/a-propos",
+  "/home/particuliers.html": "/particuliers",
+  "/home/professionnels.html": "/professionnels",
+  "/home/services/developpement-web.html": "/services/developpement-web",
+  "/home/services/developpement-logiciel.html": "/services/developpement-logiciel",
+  "/home/services/reparation-ordinateur.html": "/services/reparation-ordinateur",
+  "/home/services/automatisation.html": "/services/automatisation",
+  "/home/services/strategie-digitale.html": "/services/strategie-digitale",
+  "/home/blog/": "/blog",
+  "/home/blog/index.html": "/blog",
+  "/home/blog/diagnostic-digital.html": "/blog/diagnostic-digital",
+  "/home/blog/site-web-qui-convertit.html": "/blog/site-web-qui-convertit",
+  "/home/blog/logiciel-sur-mesure.html": "/blog/logiciel-sur-mesure",
+  "/home/mentions-legales.html": "/mentions-legales",
+  "/home/politique-confidentialite.html": "/politique-confidentialite",
+  "/home/politique-cookies.html": "/politique-cookies",
+  "/home/conditions-utilisation.html": "/conditions-utilisation"
+});
+
+if (window.location.hostname === "mybusinesslife.github.io") {
+  const productionPath = SOURCE_ROUTE_MAP[window.location.pathname];
+
+  if (productionPath) {
+    window.location.replace(`${PRODUCTION_DOMAIN}${productionPath}${window.location.hash}`);
+  }
+}
+
 document.documentElement.classList.add("js-enabled");
 
 const menuToggle = document.querySelector(".menu-toggle");
