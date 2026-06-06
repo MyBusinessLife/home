@@ -274,11 +274,24 @@
     if (column !== -1) placePiece(column, TEAL);
   }
 
-  function columnFromEvent(event) {
+  function columnFromClientX(clientX) {
     const rect = canvas.getBoundingClientRect();
-    const x = ((event.clientX - rect.left) / rect.width) * canvas.width;
+    const x = ((clientX - rect.left) / rect.width) * canvas.width;
     const layout = boardLayout();
     return Math.floor((x - layout.x) / layout.cell);
+  }
+
+  function columnFromEvent(event) {
+    return columnFromClientX(event.clientX);
+  }
+
+  function handleCanvasSelection(event) {
+    handleColumn(columnFromEvent(event));
+  }
+
+  function handleTouchSelection(event) {
+    const touch = event.changedTouches?.[0];
+    if (touch) handleColumn(columnFromClientX(touch.clientX));
   }
 
   function handleColumn(column) {
@@ -463,13 +476,12 @@
     render();
   });
 
-  canvas.addEventListener("click", (event) => {
-    handleColumn(columnFromEvent(event));
-  });
-
-  canvas.addEventListener("pointerup", (event) => {
-    handleColumn(columnFromEvent(event));
-  });
+  canvas.addEventListener("pointerdown", handleCanvasSelection);
+  canvas.addEventListener("pointerup", handleCanvasSelection);
+  canvas.addEventListener("mousedown", handleCanvasSelection);
+  canvas.addEventListener("mouseup", handleCanvasSelection);
+  canvas.addEventListener("click", handleCanvasSelection);
+  canvas.addEventListener("touchend", handleTouchSelection, { passive: true });
 
   modeButtons.forEach((button) => {
     button.addEventListener("click", () => resetGame(button.dataset.mode || "solo"));
