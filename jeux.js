@@ -467,6 +467,10 @@
     handleColumn(columnFromEvent(event));
   });
 
+  canvas.addEventListener("pointerup", (event) => {
+    handleColumn(columnFromEvent(event));
+  });
+
   modeButtons.forEach((button) => {
     button.addEventListener("click", () => resetGame(button.dataset.mode || "solo"));
   });
