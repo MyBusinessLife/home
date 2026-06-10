@@ -45,6 +45,18 @@
       path: "blog/logiciel-sur-mesure.html",
       route: "/blog/logiciel-sur-mesure"
     },
+    "blog-combien-coute-logiciel-sur-mesure": {
+      path: "blog/combien-coute-logiciel-sur-mesure.html",
+      route: "/blog/combien-coute-logiciel-sur-mesure"
+    },
+    "blog-automatiser-relances-clients": {
+      path: "blog/automatiser-relances-clients.html",
+      route: "/blog/automatiser-relances-clients"
+    },
+    "blog-seo-local-pme": {
+      path: "blog/seo-local-pme.html",
+      route: "/blog/seo-local-pme"
+    },
     "mentions-legales": { path: "mentions-legales.html", route: "/mentions-legales" },
     "politique-confidentialite": {
       path: "politique-confidentialite.html",

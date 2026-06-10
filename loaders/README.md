@@ -21,6 +21,9 @@ Le contenu est chargé depuis la source statique GitHub, puis les liens internes
 - `/blog/diagnostic-digital` : `blog-diagnostic-digital-loader.html`
 - `/blog/site-web-qui-convertit` : `blog-site-web-qui-convertit-loader.html`
 - `/blog/logiciel-sur-mesure` : `blog-logiciel-sur-mesure-loader.html`
+- `/blog/combien-coute-logiciel-sur-mesure` : `blog-combien-coute-logiciel-sur-mesure-loader.html`
+- `/blog/automatiser-relances-clients` : `blog-automatiser-relances-clients-loader.html`
+- `/blog/seo-local-pme` : `blog-seo-local-pme-loader.html`
 - `/mentions-legales` : `mentions-legales-loader.html`
 - `/politique-confidentialite` : `politique-confidentialite-loader.html`
 - `/politique-cookies` : `politique-cookies-loader.html`
