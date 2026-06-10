@@ -11,6 +11,7 @@ Le contenu est chargé depuis la source statique GitHub, puis les liens internes
 - `/a-propos` : `a-propos-loader.html`
 - `/particuliers` : `particuliers-loader.html`
 - `/professionnels` : `professionnels-loader.html`
+- `/realisations` : `realisations-loader.html`
 - `/services/developpement-web` : `developpement-web-loader.html`
 - `/services/developpement-logiciel` : `developpement-logiciel-loader.html`
 - `/services/reparation-ordinateur` : `reparation-ordinateur-loader.html`

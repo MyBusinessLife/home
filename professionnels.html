@@ -3,167 +3,191 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#0F2230" />
     <meta
       name="description"
-      content="Services MY BUSINESS LIFE pour professionnels : développement web, logiciel sur mesure, automatisation, stratégie digitale, CRM et pilotage."
+      content="Services MY BUSINESS LIFE pour professionnels : site premium, logiciel sur-mesure, agents IA, automatisation, stratégie digitale et outils de pilotage."
     />
-    <meta name="robots" content="noindex, nofollow" />
-    <link rel="canonical" href="https://mybusinesslife.fr/professionnels" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://mybusinesslife.fr/professionnels.html" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Professionnels | MY BUSINESS LIFE" />
-    <meta property="og:description" content="Des solutions digitales pour vendre, automatiser, organiser et piloter votre activité." />
-    <meta property="og:url" content="https://mybusinesslife.fr/professionnels" />
-    <meta property="og:image" content="https://mybusinesslife.github.io/home/assets/logo.png" />
-    <title>Professionnels | MY BUSINESS LIFE</title>
-    <link rel="preload" href="assets/logo.png" as="image" />
-    <link rel="stylesheet" href="styles.css?v=18" />
+    <meta
+      property="og:description"
+      content="Des solutions digitales premium pour structurer votre acquisition, mettre en place des agents IA, automatiser vos process et piloter votre activité."
+    />
+    <meta property="og:image" content="https://mybusinesslife.fr/assets/logo.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+  <title>Professionnels | MY BUSINESS LIFE</title>
+    <link rel="stylesheet" href="premium-site.css?v=31" />
   </head>
-  <body>
-    <header class="site-header" aria-label="Navigation MY BUSINESS LIFE">
-      <a class="brand" href="./" aria-label="MY BUSINESS LIFE">
-        <span class="brand-mark"><img src="assets/logo.png" alt="Logo MY BUSINESS LIFE" /></span>
-        <span class="brand-copy"><strong>MY BUSINESS LIFE</strong><small>Digital, organisation, croissance</small></span>
+  <body class="premium-page">
+    <header class="site-header" aria-label="Navigation principale">
+      <a class="brand" href="index.html" aria-label="MY BUSINESS LIFE">
+        <span class="brand-mark"><img src="assets/logo.png" alt="" /></span>
+        <span class="brand-copy">
+          <strong>MY BUSINESS LIFE</strong>
+          <small>Digital, organisation, croissance</small>
+        </span>
       </a>
-      <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">Menu</button>
-      <nav class="site-nav" id="primary-navigation" aria-label="Navigation principale">
-        <a href="./">Accueil</a>
+      <button class="menu-toggle" type="button" aria-controls="site-navigation" aria-expanded="false">Menu</button>
+      <nav id="site-navigation" class="site-nav" aria-label="Menu du site">
+        <a href="index.html">Accueil</a>
+        <a href="services.html">Services</a>
         <div class="nav-group">
-          <button class="nav-link nav-menu-button" type="button" aria-expanded="false" aria-controls="individuals-menu">Particuliers</button>
-          <div class="nav-dropdown" id="individuals-menu">
-            <a href="particuliers.html"><span>Accueil particuliers</span><small>Aide digitale, réparation, diagnostic simple.</small></a>
-            <a href="services/reparation-ordinateur.html"><span>Réparation ordinateur</span><small>Diagnostic, remise en état, conseils clairs.</small></a>
-            <a href="diagnostic.html"><span>Diagnostic en ligne</span><small>Qualifier votre besoin et recevoir une recommandation claire.</small></a>
+          <button class="nav-link nav-menu-button" type="button" aria-expanded="false">Particuliers</button>
+          <div class="nav-dropdown">
+            <a href="particuliers.html"><span>Vue d'ensemble</span><small>Domicile, réparation, conseil et matériel.</small></a>
+            <a href="assistance-informatique-domicile.html"><span>Assistance à domicile</span><small>Dépannage chez vous, crédit d'impôt 50%.</small></a>
+            <a href="reparation-ordinateur.html"><span>Réparation ordinateur</span><small>PC lent, écran, mot de passe, données.</small></a>
+            <a href="achat-materiel-informatique.html"><span>Achat matériel</span><small>PC, RAM, stockage, écran et usage.</small></a>
           </div>
         </div>
         <div class="nav-group">
-          <button class="nav-link nav-menu-button is-active" type="button" aria-expanded="false" aria-controls="business-menu">Professionnels</button>
-          <div class="nav-dropdown" id="business-menu">
-            <a href="professionnels.html"><span>Accueil professionnels</span><small>Structurer, vendre, automatiser, piloter.</small></a>
-            <a href="services/developpement-web.html"><span>Développement web</span><small>Sites, pages de conversion, interfaces.</small></a>
-            <a href="services/developpement-logiciel.html"><span>Développement logiciel</span><small>Outils métier, CRM, dashboards, portails.</small></a>
-            <a href="services/automatisation.html"><span>Automatisations</span><small>Relances, données, process, productivité.</small></a>
-            <a href="services/strategie-digitale.html"><span>Stratégie digitale</span><small>Diagnostic, priorités, plan d’action.</small></a>
+          <button class="nav-link nav-menu-button" type="button" aria-expanded="false">Professionnels</button>
+          <div class="nav-dropdown">
+            <a href="professionnels.html"><span>Vue d'ensemble</span><small>Acquisition, organisation et croissance.</small></a>
+            <a href="developpement-web.html"><span>Développement web</span><small>Sites premium, SEO et conversion.</small></a>
+            <a href="logiciel-sur-mesure.html"><span>Logiciel sur-mesure</span><small>Outils métier, dashboards et automatisation.</small></a>
+            <a href="automatisation.html"><span>Automatisation</span><small>Flux, relances et tâches répétitives.</small></a>
+            <a href="agents-ia.html"><span>Agents IA</span><small>Assistants métier, workflows et automatisation intelligente.</small></a>
+            <a href="strategie-digitale.html"><span>Stratégie digitale</span><small>Audit, priorités et feuille de route.</small></a>
+          </div>
+        </div>
+        <a href="diagnostic.html">Diagnostic</a>
+        <div class="nav-group">
+          <button class="nav-link nav-menu-button" type="button" aria-expanded="false">Ressources</button>
+          <div class="nav-dropdown">
+            <a href="cas-clients.html"><span>Cas clients</span><small>Exemples de transformation digitale.</small></a>
+            <a href="realisations.html"><span>Portfolio</span><small>Sites, applications et projets livrés.</small></a>
+            <a href="blog.html"><span>Blog</span><small>Conseils web, logiciel et informatique.</small></a>
+            <a href="credit-impot-assistance-informatique.html"><span>Crédit d'impôt</span><small>Comprendre le reste à charge 50%.</small></a>
+            <a href="jeux.html"><span>Jeux</span><small>Puissance 4 MY BUSINESS LIFE.</small></a>
+            <a href="ebook.html"><span>Ebook logiciel</span><small>Automatiser et centraliser votre activité.</small></a>
+            <a href="ebook-site-internet.html"><span>Ebook site internet</span><small>Moderniser, suivre et convertir.</small></a>
+            <a href="ebook-agents-ia.html"><span>Ebook agents IA</span><small>Automatiser sans perdre le contrôle.</small></a>
+            <a href="ebook-reparation-informatique.html"><span>Ebook réparation</span><small>Diagnostiquer avant d'intervenir.</small></a>
           </div>
         </div>
         <a href="a-propos.html">À propos</a>
-        <a href="diagnostic.html">Diagnostic</a>
-        <a href="blog/">Blog</a>
-        <a href="/ebook/">Ebook</a>
+        <a href="espace-client.html">Espace client</a>
         <a class="nav-cta" href="contact.html">Contact</a>
       </nav>
     </header>
 
-    <main class="page-main">
-      <section class="page-hero" aria-labelledby="business-title">
-        <div class="page-hero-copy" data-animate>
-          <p class="eyebrow">Professionnels</p>
-          <h1 id="business-title">Un système digital plus clair pour vendre, automatiser et piloter.</h1>
-          <p>
-            MY BUSINESS LIFE accompagne les indépendants, TPE, PME et équipes qui veulent sortir
-            des outils dispersés pour construire une présence et une organisation plus solides.
+    <main class="premium-main">
+      <section class="premium-hero" aria-labelledby="professionnels-title">
+        <div data-animate>
+          <p class="premium-kicker">Professionnels</p>
+          <h1 id="professionnels-title">Des outils digitaux <span>qui donnent confiance et font gagner du temps</span>.</h1>
+          <p class="premium-lead">
+            Sites premium, logiciels métier, agents IA, automatisations, dashboards et stratégie digitale :
+            MY BUSINESS LIFE aide les entreprises à transformer leur image et leur organisation.
           </p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="diagnostic.html?type=software">Demander un diagnostic</a>
-            <a class="button button-secondary" href="/ebook/">Lire l’ebook</a>
+          <div class="premium-actions">
+            <a class="button button-primary" href="diagnostic.html">Faire un diagnostic</a>
+            <a class="button button-secondary" href="ebook-site-internet.html">Lire l'ebook site web</a>
           </div>
         </div>
-        <figure class="page-hero-media tilt-card" data-animate="scale">
-          <img
-            src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80"
-            alt="Espace de travail professionnel avec bureaux modernes"
-          />
-        </figure>
-      </section>
-
-      <section class="service-catalog light-section" aria-labelledby="business-services">
-        <div class="section-heading" data-animate>
-          <p class="eyebrow dark">Services professionnels</p>
-          <h2 id="business-services">Choisissez une porte d’entrée. Nous structurons le reste.</h2>
-        </div>
-        <div class="solution-grid">
-          <a class="solution-card premium" href="services/developpement-web.html" data-animate>
-            <span>Web</span>
-            <h3>Sites web & pages de conversion</h3>
-            <p>Présence premium, parcours clair, SEO propre et appels à l’action cohérents.</p>
-          </a>
-          <a class="solution-card" href="services/developpement-logiciel.html" data-animate style="--delay: 90ms">
-            <span>Logiciel</span>
-            <h3>Outils métier sur mesure</h3>
-            <p>CRM, tableau de bord, portail client ou application interne adaptée à vos process.</p>
-          </a>
-          <a class="solution-card" href="services/automatisation.html" data-animate style="--delay: 180ms">
-            <span>Automatisation</span>
-            <h3>Process plus fluides</h3>
-            <p>Moins de saisie, moins d’oublis, plus de temps pour l’activité qui compte.</p>
-          </a>
-          <a class="solution-card" href="services/strategie-digitale.html" data-animate style="--delay: 270ms">
-            <span>Stratégie</span>
-            <h3>Diagnostic digital</h3>
-            <p>Un plan d’action hiérarchisé avant de lancer un site, un outil ou une refonte.</p>
-          </a>
+        <div class="premium-visual" data-animate="scale">
+          <div class="floating-metrics" aria-hidden="true">
+            <span><strong>Site</strong> premium</span>
+            <span><strong>Agents</strong> IA</span>
+          </div>
+          <div class="visual-frame">
+            <img
+              src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=82"
+              alt="Équipe professionnelle travaillant sur une stratégie digitale"
+              fetchpriority="high"
+            />
+            <div class="visual-card">
+              <span>Business</span>
+              <strong>Votre système digital doit soutenir votre niveau d'ambition.</strong>
+              <p>On relie acquisition, organisation, agents IA, automatisation et pilotage.</p>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section class="process-section dark-panel" aria-labelledby="business-process" data-animate>
-        <div>
-          <p class="eyebrow">Approche</p>
-          <h2 id="business-process">Un accompagnement pensé comme un produit digital.</h2>
-          <p>On priorise l’impact, on conçoit l’expérience, puis on livre une solution claire et évolutive.</p>
+      <section class="section-band" aria-labelledby="pro-services">
+        <div class="section-head" data-animate>
+          <div>
+            <p class="premium-kicker">Leviers</p>
+            <h2 id="pro-services">Tout ce qu'il faut pour structurer une présence premium.</h2>
+          </div>
+          <p>Chaque service peut être isolé ou combiné pour créer un système plus cohérent.</p>
         </div>
-        <div class="timeline">
-          <div><strong>Comprendre</strong><p>Objectifs, cible, outils, contraintes et irritants.</p></div>
-          <div><strong>Concevoir</strong><p>Parcours, architecture, contenus et fonctionnalités essentielles.</p></div>
-          <div><strong>Déployer</strong><p>Livraison propre, responsive, maintenable et compréhensible.</p></div>
-          <div><strong>Optimiser</strong><p>Mesure, ajustement, automatisation et évolution.</p></div>
+        <div class="premium-grid cards-3">
+          <article class="premium-card" data-spotlight data-animate><span class="service-icon">WEB</span><h3>Site qui convertit</h3><p>Présence haut de gamme, SEO, tracking et parcours de demande clair.</p><a class="card-link" href="developpement-web.html">Voir</a></article>
+          <article class="premium-card" data-spotlight data-animate style="--delay: 80ms"><span class="service-icon">APP</span><h3>Logiciel métier</h3><p>Centralisation, automatisation, dashboard et outils internes sur-mesure.</p><a class="card-link" href="logiciel-sur-mesure.html">Explorer</a></article>
+          <article class="premium-card" data-spotlight data-animate style="--delay: 160ms"><span class="service-icon">AUTO</span><h3>Automatisation</h3><p>Moins de saisie, moins d'erreurs, plus de fluidité dans les opérations.</p><a class="card-link" href="automatisation.html">Automatiser</a></article>
+          <article class="premium-card" data-spotlight data-animate style="--delay: 240ms"><span class="service-icon">IA</span><h3>Agents IA</h3><p>Assistants métier, qualification, documents, reporting et automatisation intelligente.</p><a class="card-link" href="agents-ia.html">Mettre en place</a></article>
+        </div>
+      </section>
+
+      <section class="premium-cta" data-animate>
+        <p class="premium-kicker">Étude</p>
+        <h2>Votre entreprise peut paraître plus premium et fonctionner plus simplement.</h2>
+        <p>Expliquez votre activité, vos outils et vos objectifs. On prépare la trajectoire la plus pertinente : site, logiciel, agents IA, automatisation ou pilotage.</p>
+        <div class="premium-actions">
+          <a class="button button-primary" href="contact.html">Demander une étude</a>
+          <a class="button button-secondary" href="services.html">Voir tous les services</a>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="footer-intro">
-        <a class="brand footer-brand" href="./" aria-label="MY BUSINESS LIFE">
-          <span class="brand-mark"><img src="assets/logo.png" alt="Logo MY BUSINESS LIFE" /></span>
-          <span class="brand-copy"><strong>MY BUSINESS LIFE</strong><small>Digital, organisation, croissance.</small></span>
-        </a>
-        <p>Un partenaire digital premium pour clarifier, créer, réparer, automatiser et faire grandir vos projets avec méthode.</p>
-      </div>
-      <nav class="footer-grid" aria-label="Navigation pied de page">
-        <div class="footer-column">
-          <strong>Particuliers</strong>
-          <a href="particuliers.html">Accueil particuliers</a>
-          <a href="services/reparation-ordinateur.html">Réparation ordinateur</a>
-          <a href="contact.html">Demander de l’aide</a>
+
+    <footer class="site-footer premium-footer" aria-label="Pied de page">
+      <div class="footer-shell">
+        <div>
+          <a class="brand footer-brand" href="index.html" aria-label="MY BUSINESS LIFE">
+            <span class="brand-mark"><img src="assets/logo.png" alt="" /></span>
+            <span class="brand-copy">
+              <strong>MY BUSINESS LIFE</strong>
+              <small>Digital, organisation, croissance</small>
+            </span>
+          </a>
+          <p>Des expériences digitales et informatiques premium, pensées pour être simples à comprendre et solides à utiliser.</p>
         </div>
         <div class="footer-column">
-          <strong>Professionnels</strong>
-          <a href="professionnels.html">Accueil professionnels</a>
-          <a href="services/developpement-web.html">Développement web</a>
-          <a href="services/developpement-logiciel.html">Développement logiciel</a>
-          <a href="services/automatisation.html">Automatisation</a>
-          <a href="services/strategie-digitale.html">Stratégie digitale</a>
+          <strong>Services</strong>
+          <a href="developpement-web.html">Développement web</a>
+          <a href="logiciel-sur-mesure.html">Logiciel sur-mesure</a>
+          <a href="automatisation.html">Automatisation</a>
+          <a href="agents-ia.html">Agents IA</a>
+          <a href="assistance-informatique-domicile.html">Assistance à domicile</a>
+          <a href="reparation-ordinateur.html">Réparation ordinateur</a>
+          <a href="achat-materiel-informatique.html">Achat matériel</a>
+        </div>
+        <div class="footer-column">
+          <strong>Parcours</strong>
+          <a href="particuliers.html">Particuliers</a>
+          <a href="professionnels.html">Professionnels</a>
+          <a href="diagnostic.html">Diagnostic en ligne</a>
+          <a href="espace-client.html">Espace client</a>
+          <a href="contact.html">Demander une étude</a>
         </div>
         <div class="footer-column">
           <strong>Ressources</strong>
-          <a href="diagnostic.html">Diagnostic en ligne</a>
-          <a href="blog/">Blog</a>
-          <a href="/ebook/">Ebook</a>
-          <a href="contact.html">Contact</a>
+          <a href="cas-clients.html">Cas clients</a>
+          <a href="realisations.html">Portfolio</a>
+          <a href="blog.html">Blog</a>
+          <a href="credit-impot-assistance-informatique.html">Crédit d'impôt informatique</a>
+          <a href="jeux.html">Jeux</a>
+          <a href="ebook.html">Ebook logiciel</a>
+          <a href="ebook-site-internet.html">Ebook site internet</a>
+          <a href="ebook-agents-ia.html">Ebook agents IA</a>
+          <a href="ebook-reparation-informatique.html">Ebook réparation</a>
+          <a href="mailto:contact@mybusinesslife.fr">contact@mybusinesslife.fr</a>
         </div>
-        <div class="footer-column">
-          <strong>Légal</strong>
-          <a href="mentions-legales.html">Mentions légales</a>
-          <a href="politique-confidentialite.html">Confidentialité</a>
-          <a href="politique-cookies.html">Cookies</a>
-          <a href="conditions-utilisation.html">Conditions d’utilisation</a>
-        </div>
-      </nav>
+      </div>
       <div class="footer-bottom">
-        <p class="footer-note">© 2026 MY BUSINESS LIFE. Tous droits réservés.</p>
-        <p class="footer-note">Digital utile, design premium, exécution claire.</p>
+        <span>© 2026 MY BUSINESS LIFE. Tous droits réservés.</span>
+        <span><a href="mentions-legales.html">Mentions légales</a> · <a href="conditions-utilisation.html">CGU</a> · <a href="cgv.html">CGV</a> · <a href="confidentialite.html">Confidentialité</a> · <a href="cookies.html">Cookies</a> · <a href="accessibilite.html">Accessibilité</a></span>
       </div>
     </footer>
 
-    <script src="script.js?v=18"></script>
+    <script src="site-config.js?v=4"></script>
+    <script src="site-data.js?v=7"></script>
+    <script src="premium-site.js?v=30"></script>
   </body>
 </html>

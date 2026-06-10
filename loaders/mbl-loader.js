@@ -4,8 +4,8 @@
   const DEFAULT_SITE_BASE = "https://mybusinesslife.fr";
   const HOME_SOURCE_BASE = "https://mybusinesslife.github.io/home/";
   const EBOOK_SOURCE_BASE = "https://mybusinesslife.github.io/mbl-ebook-lead-magnet/";
-  const STYLE_VERSION = "18";
-  const SCRIPT_VERSION = "18";
+  const STYLE_VERSION = "19";
+  const SCRIPT_VERSION = "19";
 
   const pages = Object.freeze({
     home: { path: "index.html", route: "/" },
@@ -14,6 +14,7 @@
     "a-propos": { path: "a-propos.html", route: "/a-propos" },
     particuliers: { path: "particuliers.html", route: "/particuliers" },
     professionnels: { path: "professionnels.html", route: "/professionnels" },
+    realisations: { path: "realisations.html", route: "/realisations" },
     "developpement-web": {
       path: "services/developpement-web.html",
       route: "/services/developpement-web"

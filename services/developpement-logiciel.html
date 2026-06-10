@@ -1,142 +1,1111 @@
 <!doctype html>
 <html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#0F2230" />
-    <meta name="description" content="Développement logiciel sur mesure MY BUSINESS LIFE : CRM, outils métier, dashboards, portails clients et applications internes." />
-    <meta name="robots" content="noindex, nofollow" />
-    <link rel="canonical" href="https://mybusinesslife.fr/services/developpement-logiciel" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Développement logiciel | MY BUSINESS LIFE" />
-    <meta property="og:description" content="Des outils métier qui s’adaptent à votre organisation, pas l’inverse." />
-    <meta property="og:url" content="https://mybusinesslife.fr/services/developpement-logiciel" />
-    <meta property="og:image" content="https://mybusinesslife.github.io/home/assets/logo.png" />
-    <title>Développement logiciel | MY BUSINESS LIFE</title>
-    <link rel="preload" href="../assets/logo.png" as="image" />
-    <link rel="stylesheet" href="../styles.css?v=18" />
-  </head>
-  <body>
-    <header class="site-header" aria-label="Navigation MY BUSINESS LIFE">
-      <a class="brand" href="../" aria-label="MY BUSINESS LIFE">
-        <span class="brand-mark"><img src="../assets/logo.png" alt="Logo MY BUSINESS LIFE" /></span>
-        <span class="brand-copy"><strong>MY BUSINESS LIFE</strong><small>Digital, organisation, croissance</small></span>
-      </a>
-      <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">Menu</button>
-      <nav class="site-nav" id="primary-navigation" aria-label="Navigation principale">
-        <a href="../">Accueil</a>
-        <div class="nav-group">
-          <button class="nav-link nav-menu-button" type="button" aria-expanded="false" aria-controls="individuals-menu">Particuliers</button>
-          <div class="nav-dropdown" id="individuals-menu">
-            <a href="../particuliers.html"><span>Accueil particuliers</span><small>Aide digitale, réparation, diagnostic simple.</small></a>
-            <a href="reparation-ordinateur.html"><span>Réparation ordinateur</span><small>Diagnostic, remise en état, conseils clairs.</small></a>
-            <a href="../diagnostic.html"><span>Diagnostic en ligne</span><small>Qualifier votre besoin et recevoir une recommandation claire.</small></a>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0F2230" />
+  <meta name="description" content="Développement logiciel sur mesure MY BUSINESS LIFE : CRM, outils métier, dashboards, portails clients et applications internes." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://mybusinesslife.fr/services/developpement-logiciel" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Développement logiciel | MY BUSINESS LIFE" />
+  <meta property="og:description" content="Des outils métier qui s'adaptent à votre organisation, pas l'inverse." />
+  <meta property="og:image" content="https://mybusinesslife.fr/assets/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>Développement logiciel | MY BUSINESS LIFE</title>
+  <link rel="preload" href="../assets/logo.png" as="image" />
+  <link rel="stylesheet" href="../premium-site.css?v=31" />
+  <style>
+    /* ══ LOGICIEL SUR-MESURE — PAGE REDESIGN ══ */
+    :root {
+      --teal: #1c8fa3; --tl: #27bdd6; --org: #ff6a2e;
+      --navy: #0f2230; --ink: #06131c; --w: #f7f9fc;
+      --mu: rgba(247,249,252,0.68); --ease: cubic-bezier(0.16,1,0.3,1);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: auto; }
+    body { margin: 0; overflow-x: hidden; background: var(--ink); color: var(--w);
+           font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+
+    /* ─── HERO ─── */
+    .pg-hero {
+      position: relative; min-height: 100vh;
+      display: flex; align-items: center;
+      padding: 140px 6% 80px; overflow: hidden;
+    }
+    .pg-hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 1000px 700px at 82% 15%, rgba(28,143,163,0.18) 0%, transparent 60%),
+        radial-gradient(ellipse 600px 500px at 8% 85%, rgba(255,106,46,0.1) 0%, transparent 55%),
+        linear-gradient(175deg, var(--navy) 0%, var(--ink) 55%);
+    }
+    .pg-hero-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(247,249,252,0.028) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(247,249,252,0.022) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: linear-gradient(to bottom, black 30%, transparent 90%);
+    }
+    .pg-hero-inner {
+      position: relative; z-index: 1;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: center;
+      max-width: 1260px; margin: 0 auto; width: 100%;
+    }
+    .pg-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 16px; border-radius: 100px;
+      border: 1px solid rgba(28,143,163,0.42);
+      background: rgba(28,143,163,0.09);
+      font-size: .7rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--tl); margin-bottom: 28px;
+    }
+    .pg-badge-dot {
+      width: 6px; height: 6px; border-radius: 50%; background: var(--tl);
+      animation: bdot 2s ease infinite;
+    }
+    @keyframes bdot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.3;transform:scale(1.6)} }
+
+    .pg-hero h1 {
+      font-size: clamp(2.6rem, 5vw, 4.2rem);
+      font-weight: 900; line-height: 1.04; letter-spacing: -.04em;
+      margin: 0 0 26px;
+      background: linear-gradient(140deg, #f7f9fc 20%, rgba(247,249,252,0.62) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .pg-hero p {
+      font-size: 1.08rem; color: var(--mu); line-height: 1.74;
+      margin: 0 0 38px; max-width: 480px;
+    }
+    .pg-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .pg-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 15px 28px; border-radius: 100px;
+      font-size: .95rem; font-weight: 700; text-decoration: none;
+      cursor: pointer; border: none;
+      transition: transform .25s var(--ease), box-shadow .25s;
+    }
+    .pg-btn-a {
+      background: linear-gradient(135deg, var(--teal), #1270a0);
+      color: #fff; box-shadow: 0 8px 36px rgba(28,143,163,0.42);
+    }
+    .pg-btn-a:hover { transform: translateY(-3px); box-shadow: 0 18px 52px rgba(28,143,163,0.58); }
+    .pg-btn-b {
+      background: rgba(247,249,252,0.08); color: var(--w);
+      border: 1px solid rgba(247,249,252,0.18);
+    }
+    .pg-btn-b:hover { transform: translateY(-2px); background: rgba(247,249,252,0.13); }
+
+    /* Hero mockup stage */
+    .pg-stage {
+      perspective: 1200px; perspective-origin: 50% 40%;
+      display: flex; align-items: center; justify-content: center;
+      min-height: 500px;
+    }
+    .pg-mw {
+      position: relative; width: 100%; max-width: 580px;
+      transform-style: preserve-3d; will-change: transform;
+      transform: rotateX(22deg) rotateY(-18deg) rotateZ(2deg) scale(0.88);
+    }
+    .pg-mockup {
+      border-radius: 14px; overflow: hidden;
+      border: 1px solid rgba(247,249,252,0.13);
+      background: #0d1e2b;
+      box-shadow: 0 60px 130px rgba(0,0,0,0.7),
+                  0 0 0 1px rgba(247,249,252,0.07),
+                  inset 0 1px 0 rgba(255,255,255,0.06);
+      transform-style: preserve-3d;
+    }
+    .pg-mbar {
+      display: flex; align-items: center; gap: 7px;
+      padding: 11px 16px; background: rgba(6,19,28,0.82);
+      border-bottom: 1px solid rgba(247,249,252,0.07);
+    }
+    .pg-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .pg-dot:nth-child(1) { background: #ff5f56; }
+    .pg-dot:nth-child(2) { background: #ffbd2e; }
+    .pg-dot:nth-child(3) { background: #27c93f; }
+    .pg-url {
+      flex: 1; height: 20px; background: rgba(247,249,252,0.07);
+      border-radius: 5px; margin-left: 10px;
+    }
+    .pg-app { display: grid; grid-template-columns: 54px 1fr; min-height: 370px; }
+    .pg-sb {
+      background: rgba(6,19,28,0.9); border-right: 1px solid rgba(247,249,252,0.06);
+      padding: 14px 8px; display: flex; flex-direction: column; gap: 5px;
+    }
+    .pg-sb-logo {
+      width: 32px; height: 32px; border-radius: 8px;
+      background: linear-gradient(135deg, var(--teal), #0f5f73);
+      margin: 0 auto 12px; display: flex; align-items: center; justify-content: center;
+      font-size: .56rem; font-weight: 900; color: #fff;
+    }
+    .pg-sb-item {
+      height: 30px; border-radius: 7px; background: rgba(247,249,252,0.05);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .pg-sb-item.a { background: rgba(28,143,163,0.2); border: 1px solid rgba(28,143,163,0.28); }
+    .pg-sb-icon { width: 13px; height: 13px; background: rgba(247,249,252,0.22); border-radius: 3px; }
+    .pg-sb-item.a .pg-sb-icon { background: var(--tl); }
+    .pg-main { padding: 16px; display: flex; flex-direction: column; gap: 11px; }
+    .pg-krow { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; }
+    .pg-k { padding: 12px; border-radius: 8px; background: rgba(247,249,252,0.045); border: 1px solid rgba(247,249,252,0.07); }
+    .pg-kl { font-size: .53rem; color: rgba(247,249,252,0.42); font-weight: 700; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 4px; }
+    .pg-kv { font-size: 1.1rem; font-weight: 900; }
+    .pg-kd { font-size: .53rem; color: #4ade80; margin-top: 2px; }
+    .pg-crow { display: grid; grid-template-columns: 1.4fr 1fr; gap: 8px; }
+    .pg-cc { border-radius: 8px; border: 1px solid rgba(247,249,252,0.07); background: rgba(247,249,252,0.035); padding: 12px; }
+    .pg-cct { font-size: .56rem; font-weight: 700; color: rgba(247,249,252,0.42); text-transform: uppercase; margin-bottom: 8px; }
+    .pg-bars { display: flex; align-items: flex-end; gap: 4px; height: 58px; }
+    .pg-bar { flex: 1; border-radius: 3px 3px 2px 2px; background: linear-gradient(180deg, var(--tl), var(--teal)); opacity: .85; }
+    .pg-bar:nth-child(3) { opacity: 1; background: linear-gradient(180deg, var(--org), #c44a1c); }
+    .pg-donut-w { display: flex; align-items: center; gap: 10px; }
+    .pg-donut {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: conic-gradient(var(--teal) 0% 58%, var(--org) 58% 78%, rgba(247,249,252,0.1) 78%);
+      position: relative; flex-shrink: 0;
+    }
+    .pg-donut::after { content:''; position:absolute; inset:13px; background:#0d1e2b; border-radius:50%; }
+    .pg-dleg { display: flex; flex-direction: column; gap: 3px; }
+    .pg-dli { display: flex; align-items: center; gap: 4px; font-size: .53rem; color: rgba(247,249,252,0.55); }
+    .pg-dld { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
+    .pg-tcard { border-radius: 8px; border: 1px solid rgba(247,249,252,0.07); background: rgba(247,249,252,0.028); overflow: hidden; }
+    .pg-thead { display: grid; grid-template-columns: 2fr 1fr 1fr; padding: 6px 10px; border-bottom: 1px solid rgba(247,249,252,0.06); font-size: .5rem; font-weight: 700; color: rgba(247,249,252,0.32); text-transform: uppercase; }
+    .pg-trow { display: grid; grid-template-columns: 2fr 1fr 1fr; padding: 7px 10px; font-size: .57rem; color: rgba(247,249,252,0.72); border-bottom: 1px solid rgba(247,249,252,0.035); align-items: center; }
+    .pg-pill { display: inline-block; padding: 2px 7px; border-radius: 100px; font-size: .5rem; font-weight: 700; }
+    .pg-pill-g { background: rgba(74,222,128,0.14); color: #4ade80; }
+    .pg-pill-o { background: rgba(255,106,46,0.14); color: #ff6a2e; }
+    .pg-pill-t { background: rgba(28,143,163,0.18); color: var(--tl); }
+    .pg-float {
+      position: absolute; padding: 10px 14px; border-radius: 12px;
+      background: rgba(6,19,28,0.92); border: 1px solid rgba(247,249,252,0.16);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5); backdrop-filter: blur(16px);
+      pointer-events: none;
+    }
+    .pg-float strong, .pg-float span { display: block; }
+    .pg-float strong { font-size: .78rem; color: var(--w); }
+    .pg-float span { font-size: .68rem; color: var(--mu); margin-top: 2px; }
+    .pg-fa { top: 12%; left: -17%; animation: pfa 7s ease-in-out infinite; }
+    .pg-fb { bottom: 14%; right: -12%; animation: pfa 9s ease-in-out infinite reverse; }
+    @keyframes pfa { 0%,100%{transform:translateY(0) rotate(-1deg)} 50%{transform:translateY(-9px) rotate(1deg)} }
+    .pg-fdot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+    .pg-scroll {
+      position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      color: rgba(247,249,252,0.38); font-size: .68rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      animation: fiu .8s var(--ease) 1.8s both;
+    }
+    .pg-scroll-line {
+      width: 1px; height: 40px;
+      background: linear-gradient(to bottom, var(--teal), transparent);
+      animation: sln 1.8s ease infinite;
+    }
+    @keyframes sln {
+      0%{transform:scaleY(0);transform-origin:top}
+      50%{transform:scaleY(1);transform-origin:top}
+      51%{transform:scaleY(1);transform-origin:bottom}
+      100%{transform:scaleY(0);transform-origin:bottom}
+    }
+    @keyframes fiu { from{opacity:0;transform:translateY(20px) translateX(-50%)} to{opacity:1;transform:translateY(0) translateX(-50%)} }
+    @keyframes fiu2 { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:none} }
+    .pg-hero-copy > * { opacity:0; animation: fiu2 .8s var(--ease) both; }
+    .pg-hero-copy .pg-badge { animation-delay:.1s }
+    .pg-hero-copy h1 { animation-delay:.25s }
+    .pg-hero-copy p  { animation-delay:.4s }
+    .pg-hero-copy .pg-btns { animation-delay:.55s }
+    .pg-stage { opacity:0; animation: fiu2 .9s var(--ease) .3s both; }
+
+    /* ─── METRICS STRIP ─── */
+    .pg-strip {
+      border-top: 1px solid rgba(247,249,252,0.055);
+      border-bottom: 1px solid rgba(247,249,252,0.055);
+      background: rgba(15,34,48,0.55);
+    }
+    .pg-strip-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(4,1fr);
+    }
+    .pg-metric {
+      padding: 44px 28px; display: flex; flex-direction: column; gap: 8px;
+      position: relative;
+    }
+    .pg-metric + .pg-metric::before {
+      content:''; position:absolute; left:0; top:25%; height:50%; width:1px;
+      background: rgba(247,249,252,0.07);
+    }
+    .pg-mv {
+      font-size: clamp(2rem, 3.2vw, 2.8rem);
+      font-weight: 900; letter-spacing: -.03em; line-height: 1;
+    }
+    .pg-mv em { font-style: normal; color: var(--tl); }
+    .pg-ml { font-size: .82rem; color: var(--mu); line-height: 1.5; margin-top: 2px; }
+
+    /* ─── STICKY 3D TOUR ─── */
+    .pg-tour { position: relative; height: 300vh; }
+    .pg-tour-pin {
+      position: sticky; top: 0; height: 100vh; overflow: hidden;
+      display: grid; grid-template-columns: 1fr 1fr;
+      align-items: center; gap: 60px;
+      padding: 0 6%; max-width: 1320px; margin: 0 auto; width: 100%;
+    }
+    .pg-tour-glow {
+      position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(ellipse 700px 500px at 100% 50%, rgba(28,143,163,0.1) 0%, transparent 65%);
+    }
+    .pg-panels { position: relative; z-index: 1; }
+    .pg-panel {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; justify-content: center;
+      opacity: 0; transform: translateY(36px);
+      transition: opacity .55s var(--ease), transform .55s var(--ease);
+      pointer-events: none;
+    }
+    .pg-panel.on { opacity: 1; transform: none; pointer-events: auto; }
+    .pg-panel:first-child { position: relative; }
+    .pg-pn {
+      display: flex; align-items: center; gap: 12px;
+      font-size: .68rem; font-weight: 900; color: var(--tl);
+      letter-spacing: .1em; text-transform: uppercase; margin-bottom: 18px;
+    }
+    .pg-pn::after { content:''; height:1px; width:48px; background: rgba(28,143,163,0.35); }
+    .pg-panel h2 {
+      font-size: clamp(2rem, 3.2vw, 2.9rem);
+      font-weight: 900; letter-spacing: -.04em; line-height: 1.08; margin: 0 0 20px;
+    }
+    .pg-panel p { font-size: 1rem; color: var(--mu); line-height: 1.74; margin: 0 0 30px; max-width: 450px; }
+    .pg-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .pg-tag {
+      padding: 7px 14px; border-radius: 100px;
+      border: 1px solid rgba(247,249,252,0.11); background: rgba(247,249,252,0.06);
+      font-size: .78rem; font-weight: 600; color: rgba(247,249,252,0.75);
+      transition: border-color .2s, color .2s;
+    }
+    .pg-tag:hover { border-color: rgba(28,143,163,0.4); color: var(--tl); }
+    .pg-dots {
+      position: absolute; left: -22px; top: 50%; transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .pg-dot2 {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: rgba(247,249,252,0.18);
+      transition: background .3s, transform .3s;
+    }
+    .pg-dot2.on { background: var(--tl); transform: scale(1.6); box-shadow: 0 0 10px rgba(28,143,163,0.5); }
+    .pg-mside { perspective: 1100px; perspective-origin: 50% 45%; z-index: 1; }
+    .pg-m3d { transform-style: preserve-3d; transform: rotateX(28deg) rotateY(-22deg) scale(0.85); will-change: transform; }
+
+    /* ─── FEATURE DUO ─── */
+    .pg-duo {
+      max-width: 1220px; margin: 0 auto;
+      padding: 130px 6%; display: flex; flex-direction: column; gap: 110px;
+    }
+    .pg-duo-block {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+    }
+    .pg-duo-block.rev > .pg-duo-vis { order: -1; }
+    .pg-duo-label {
+      font-size: .68rem; font-weight: 800; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--tl); margin-bottom: 18px;
+    }
+    .pg-duo-h {
+      font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+      font-weight: 900; letter-spacing: -.035em; line-height: 1.1; margin: 0 0 18px;
+    }
+    .pg-duo-p { font-size: 1rem; color: var(--mu); line-height: 1.72; margin: 0 0 28px; }
+    .pg-duo-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 11px; }
+    .pg-duo-list li {
+      display: flex; align-items: flex-start; gap: 11px;
+      font-size: .9rem; color: var(--mu); line-height: 1.55;
+    }
+    .pg-duo-list li::before {
+      content: ''; width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0; margin-top: 1px;
+      background: rgba(28,143,163,0.18) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='8' viewBox='0 0 10 8'%3E%3Cpath d='M1 4L3.5 6.5L9 1' stroke='%2327bdd6' stroke-width='1.5' stroke-linecap='round' fill='none'/%3E%3C/svg%3E") center no-repeat;
+      border: 1px solid rgba(28,143,163,0.35);
+    }
+    .pg-duo-vis { position: relative; }
+
+    /* ── Permissions mockup ── */
+    .pg-perms {
+      border-radius: 18px; background: #0c1d2a;
+      border: 1px solid rgba(247,249,252,0.09);
+      box-shadow: 0 48px 110px rgba(0,0,0,0.55); overflow: hidden;
+    }
+    .pg-perms-head {
+      padding: 20px 24px; border-bottom: 1px solid rgba(247,249,252,0.06);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .pg-perms-title { font-size: .88rem; font-weight: 700; }
+    .pg-perms-add {
+      font-size: .7rem; color: var(--tl);
+      background: rgba(28,143,163,0.13); border: 1px solid rgba(28,143,163,0.28);
+      padding: 5px 13px; border-radius: 100px; font-weight: 700;
+    }
+    .pg-roles { display: flex; flex-direction: column; }
+    .pg-role-hr {
+      display: grid; grid-template-columns: 1.4fr repeat(4,1fr);
+      background: rgba(247,249,252,0.025);
+      border-bottom: 1px solid rgba(247,249,252,0.055);
+    }
+    .pg-role-row {
+      display: grid; grid-template-columns: 1.4fr repeat(4,1fr);
+      border-bottom: 1px solid rgba(247,249,252,0.04);
+      transition: background .2s;
+    }
+    .pg-role-row:hover { background: rgba(247,249,252,0.025); }
+    .pg-rc { padding: 13px 18px; font-size: .72rem; display: flex; align-items: center; }
+    .pg-role-hr .pg-rc {
+      font-size: .62rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .06em; color: rgba(247,249,252,0.35);
+    }
+    .pg-ravatar {
+      width: 26px; height: 26px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .58rem; font-weight: 800; margin-right: 10px; flex-shrink: 0;
+    }
+    .pg-tog {
+      width: 30px; height: 17px; border-radius: 100px; position: relative; cursor: pointer;
+    }
+    .pg-tog::after {
+      content:''; position:absolute; width:12px; height:12px;
+      border-radius:50%; background:#fff; top:2.5px; transition: left .2s;
+    }
+    .pg-tog.on { background: var(--teal); }
+    .pg-tog.on::after { left: 15px; }
+    .pg-tog.off { background: rgba(247,249,252,0.14); }
+    .pg-tog.off::after { left: 2.5px; }
+    .pg-tog.pt { background: rgba(255,106,46,0.45); }
+    .pg-tog.pt::after { left: 9px; }
+    .pg-perms-foot {
+      padding: 13px 20px; border-top: 1px solid rgba(247,249,252,0.05);
+      font-size: .7rem; color: rgba(247,249,252,0.35);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .pg-perms-foot::before { content: '🔒'; }
+
+    /* ── Workflow mockup ── */
+    .pg-wflow {
+      border-radius: 18px; background: #0c1d2a;
+      border: 1px solid rgba(247,249,252,0.09);
+      box-shadow: 0 48px 110px rgba(0,0,0,0.55); padding: 28px;
+    }
+    .pg-wf-head {
+      display: flex; align-items: center; justify-content: space-between; margin-bottom: 26px;
+    }
+    .pg-wf-title { font-size: .88rem; font-weight: 700; }
+    .pg-wf-live {
+      font-size: .68rem; background: rgba(74,222,128,0.1);
+      color: #4ade80; border: 1px solid rgba(74,222,128,0.22);
+      padding: 4px 10px; border-radius: 100px; font-weight: 700;
+      display: flex; align-items: center; gap: 5px;
+    }
+    .pg-wf-live::before { content:''; width:6px; height:6px; border-radius:50%; background:#4ade80; animation: bdot 2s ease infinite; }
+    .pg-nodes { display: flex; flex-direction: column; gap: 0; }
+    .pg-node { display: flex; align-items: flex-start; gap: 14px; }
+    .pg-node-left { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+    .pg-node-icon {
+      width: 38px; height: 38px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .95rem; flex-shrink: 0;
+    }
+    .pg-node-line { width: 1px; height: 22px; background: linear-gradient(to bottom, rgba(28,143,163,0.35), transparent); margin-top: 3px; }
+    .pg-node-body { flex: 1; padding-bottom: 20px; }
+    .pg-node-name { font-size: .82rem; font-weight: 700; margin-bottom: 3px; }
+    .pg-node-desc { font-size: .72rem; color: var(--mu); line-height: 1.45; }
+    .pg-npill {
+      display: inline-block; font-size: .62rem; font-weight: 700;
+      padding: 2px 9px; border-radius: 100px; margin-top: 6px;
+    }
+    .pg-ntrig { background: rgba(28,143,163,0.14); border: 1px solid rgba(28,143,163,0.28); color: var(--tl); }
+    .pg-nact  { background: rgba(255,106,46,0.11); border: 1px solid rgba(255,106,46,0.24); color: var(--org); }
+    .pg-ncond { background: rgba(124,58,237,0.13); border: 1px solid rgba(124,58,237,0.28); color: #a78bfa; }
+    .pg-nsend { background: rgba(74,222,128,0.09); border: 1px solid rgba(74,222,128,0.2); color: #4ade80; }
+    .pg-node:last-child .pg-node-line { display: none; }
+
+    /* ─── PROCESS HORIZONTAL ─── */
+    .pg-proc {
+      padding: 120px 6%;
+      background: linear-gradient(to bottom, var(--ink), var(--navy) 50%, var(--ink));
+    }
+    .pg-proc-inner { max-width: 1100px; margin: 0 auto; }
+    .pg-proc-head { text-align: center; margin-bottom: 80px; }
+    .pg-proc-tag {
+      font-size: .68rem; font-weight: 800; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--tl); margin-bottom: 16px;
+    }
+    .pg-proc-h {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 900; letter-spacing: -.04em; margin: 0;
+    }
+    .pg-hsteps {
+      display: grid; grid-template-columns: repeat(4,1fr);
+      position: relative; gap: 0;
+    }
+    .pg-hsteps::before {
+      content: ''; position: absolute;
+      top: 28px; left: 14%; right: 14%; height: 1px;
+      background: linear-gradient(to right, var(--teal) 0%, rgba(255,106,46,0.5) 70%, transparent 100%);
+    }
+    .pg-hstep {
+      padding: 0 20px; display: flex; flex-direction: column; align-items: center;
+      text-align: center; position: relative;
+      opacity: 0; transform: translateY(28px);
+      transition: opacity .65s var(--ease), transform .65s var(--ease);
+    }
+    .pg-hstep.vis { opacity: 1; transform: none; }
+    .pg-hstep:nth-child(1) { transition-delay: 0s; }
+    .pg-hstep:nth-child(2) { transition-delay: .1s; }
+    .pg-hstep:nth-child(3) { transition-delay: .2s; }
+    .pg-hstep:nth-child(4) { transition-delay: .3s; }
+    .pg-hnum {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--navy); border: 2px solid;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; font-weight: 900; position: relative; z-index: 1;
+      margin-bottom: 28px;
+    }
+    .pg-hstep:nth-child(1) .pg-hnum { border-color: var(--teal); color: var(--teal); box-shadow: 0 0 24px rgba(28,143,163,.4); }
+    .pg-hstep:nth-child(2) .pg-hnum { border-color: #2094be; color: #2094be; box-shadow: 0 0 24px rgba(32,148,190,.3); }
+    .pg-hstep:nth-child(3) .pg-hnum { border-color: #d05c1c; color: #d05c1c; box-shadow: 0 0 24px rgba(208,92,28,.3); }
+    .pg-hstep:nth-child(4) .pg-hnum { border-color: var(--org); color: var(--org); box-shadow: 0 0 24px rgba(255,106,46,.4); }
+    .pg-hstep h3 { font-size: 1rem; font-weight: 800; margin: 0 0 10px; letter-spacing: -.01em; }
+    .pg-hstep p { font-size: .83rem; color: var(--mu); line-height: 1.65; margin: 0; }
+
+    /* ─── CTA ─── */
+    .pg-cta {
+      padding: 160px 6%; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .pg-cta::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(28,143,163,0.22), transparent 58%),
+        radial-gradient(ellipse at 25% 100%, rgba(255,106,46,0.13), transparent 50%);
+    }
+    .pg-cta-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(247,249,252,0.032) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(247,249,252,0.032) 1px, transparent 1px);
+      background-size: 62px 62px;
+    }
+    .pg-cta-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+    .pg-cta-inner h2 {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 900; letter-spacing: -.04em; line-height: 1.05; margin: 16px 0 24px;
+      background: linear-gradient(135deg, var(--w) 25%, rgba(247,249,252,0.62));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .pg-cta-inner p { font-size: 1.05rem; color: var(--mu); margin: 0 0 44px; line-height: 1.7; }
+    .pg-cta-acts { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .pg-cta-note { margin-top: 22px; font-size: .78rem; color: rgba(247,249,252,0.32); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 980px) {
+      .pg-hero-inner { grid-template-columns: 1fr; }
+      .pg-stage { display: none; }
+      .pg-strip-inner { grid-template-columns: repeat(2,1fr); }
+      .pg-tour-pin { grid-template-columns: 1fr; }
+      .pg-mside { display: none; }
+      .pg-duo-block { grid-template-columns: 1fr; gap: 40px; }
+      .pg-duo-block.rev > .pg-duo-vis { order: 0; }
+      .pg-hsteps { grid-template-columns: repeat(2,1fr); gap: 48px; }
+      .pg-hsteps::before { display: none; }
+    }
+    @media (max-width: 600px) {
+      .pg-strip-inner { grid-template-columns: 1fr 1fr; }
+      .pg-hsteps { grid-template-columns: 1fr; gap: 36px; }
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Développement logiciel sur mesure",
+      "description": "Conception de logiciels métier sur mesure : CRM, dashboards, portails clients et applications internes adaptés à votre organisation.",
+      "url": "https://mybusinesslife.fr/services/developpement-logiciel.html",
+      "provider": {"@type": "Organization", "name": "MY BUSINESS LIFE", "url": "https://mybusinesslife.fr/"},
+      "areaServed": "FR",
+      "serviceType": "Développement logiciel sur mesure"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://mybusinesslife.fr/"},
+        {"@type": "ListItem", "position": 2, "name": "Professionnels", "item": "https://mybusinesslife.fr/professionnels.html"},
+        {"@type": "ListItem", "position": 3, "name": "Développement logiciel sur mesure", "item": "https://mybusinesslife.fr/services/developpement-logiciel.html"}
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <header class="site-header" aria-label="Navigation MY BUSINESS LIFE">
+    <a class="brand" href="../" aria-label="MY BUSINESS LIFE">
+      <span class="brand-mark"><img src="../assets/logo.png" alt="Logo MY BUSINESS LIFE" /></span>
+      <span class="brand-copy"><strong>MY BUSINESS LIFE</strong><small>Digital, organisation, croissance</small></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">Menu</button>
+    <nav class="site-nav" id="primary-navigation" aria-label="Navigation principale">
+      <a href="../">Accueil</a>
+      <div class="nav-group">
+        <button class="nav-link nav-menu-button" type="button" aria-expanded="false" aria-controls="business-menu">Professionnels</button>
+        <div class="nav-dropdown" id="business-menu">
+          <a href="../professionnels.html"><span>Vue d'ensemble</span><small>Structurer, vendre, automatiser, piloter.</small></a>
+          <a href="developpement-web.html"><span>Développement web</span><small>Sites, pages de conversion, interfaces.</small></a>
+          <a href="developpement-logiciel.html"><span>Logiciel sur-mesure</span><small>Outils métier, CRM, dashboards, portails.</small></a>
+          <a href="automatisation.html"><span>Automatisations</span><small>Relances, données, process, productivité.</small></a>
+          <a href="strategie-digitale.html"><span>Stratégie digitale</span><small>Diagnostic, priorités, plan d'action.</small></a>
+        </div>
+      </div>
+      <a href="../a-propos.html">À propos</a>
+      <a href="../diagnostic.html">Diagnostic</a>
+      <a class="nav-cta" href="../contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ══ HERO ══ -->
+    <section class="pg-hero" aria-labelledby="pg-title">
+      <div class="pg-hero-bg" aria-hidden="true"></div>
+      <div class="pg-hero-grid" aria-hidden="true"></div>
+
+      <div class="pg-hero-inner">
+        <div class="pg-hero-copy">
+          <div class="pg-badge">
+            <span class="pg-badge-dot"></span>Logiciel sur-mesure
+          </div>
+          <h1 id="pg-title">Un outil taillé pour votre réalité, pas pour le marché.</h1>
+          <p>CRM, portail client, outil métier interne — nous concevons des logiciels qui épousent exactement votre organisation, et qui évoluent avec elle.</p>
+          <div class="pg-btns">
+            <a class="pg-btn pg-btn-a" href="../diagnostic.html">Étudier mon besoin</a>
+            <a class="pg-btn pg-btn-b" href="../contact.html">Parler à l'équipe</a>
           </div>
         </div>
-        <div class="nav-group">
-          <button class="nav-link nav-menu-button is-active" type="button" aria-expanded="false" aria-controls="business-menu">Professionnels</button>
-          <div class="nav-dropdown" id="business-menu">
-            <a href="../professionnels.html"><span>Accueil professionnels</span><small>Structurer, vendre, automatiser, piloter.</small></a>
-            <a href="developpement-web.html"><span>Développement web</span><small>Sites, pages de conversion, interfaces.</small></a>
-            <a href="developpement-logiciel.html"><span>Développement logiciel</span><small>Outils métier, CRM, dashboards, portails.</small></a>
-            <a href="automatisation.html"><span>Automatisations</span><small>Relances, données, process, productivité.</small></a>
-            <a href="strategie-digitale.html"><span>Stratégie digitale</span><small>Diagnostic, priorités, plan d’action.</small></a>
+
+        <div class="pg-stage" aria-hidden="true">
+          <div class="pg-mw" id="hero-mw">
+            <div class="pg-float pg-fa">
+              <strong><span class="pg-fdot" style="background:#4ade80"></span>Livraison confirmée</strong>
+              <span>Module CRM v2.4 — en ligne</span>
+            </div>
+            <div class="pg-float pg-fb">
+              <strong>↑ 34 % productivité</strong>
+              <span>depuis l'implémentation</span>
+            </div>
+            <div class="pg-mockup">
+              <div class="pg-mbar">
+                <div class="pg-dot"></div><div class="pg-dot"></div><div class="pg-dot"></div>
+                <div class="pg-url"></div>
+              </div>
+              <div class="pg-app">
+                <nav class="pg-sb">
+                  <div class="pg-sb-logo">MBL</div>
+                  <div class="pg-sb-item a"><div class="pg-sb-icon"></div></div>
+                  <div class="pg-sb-item"><div class="pg-sb-icon"></div></div>
+                  <div class="pg-sb-item"><div class="pg-sb-icon"></div></div>
+                  <div class="pg-sb-item"><div class="pg-sb-icon"></div></div>
+                  <div class="pg-sb-item"><div class="pg-sb-icon"></div></div>
+                </nav>
+                <div class="pg-main">
+                  <div class="pg-krow">
+                    <div class="pg-k"><div class="pg-kl">Clients actifs</div><div class="pg-kv">1 284</div><div class="pg-kd">↑ +12 %</div></div>
+                    <div class="pg-k"><div class="pg-kl">CA mensuel</div><div class="pg-kv">48 k€</div><div class="pg-kd">↑ +8 %</div></div>
+                    <div class="pg-k"><div class="pg-kl">Tâches auto</div><div class="pg-kv">347</div><div class="pg-kd">↑ +34 %</div></div>
+                  </div>
+                  <div class="pg-crow">
+                    <div class="pg-cc">
+                      <div class="pg-cct">Activité — 6 mois</div>
+                      <div class="pg-bars">
+                        <div class="pg-bar" style="height:42%"></div>
+                        <div class="pg-bar" style="height:60%"></div>
+                        <div class="pg-bar" style="height:50%"></div>
+                        <div class="pg-bar" style="height:76%"></div>
+                        <div class="pg-bar" style="height:86%"></div>
+                        <div class="pg-bar" style="height:95%"></div>
+                      </div>
+                    </div>
+                    <div class="pg-cc">
+                      <div class="pg-cct">Répartition</div>
+                      <div class="pg-donut-w">
+                        <div class="pg-donut"></div>
+                        <div class="pg-dleg">
+                          <div class="pg-dli"><div class="pg-dld" style="background:var(--teal)"></div>Digital 58 %</div>
+                          <div class="pg-dli"><div class="pg-dld" style="background:var(--org)"></div>Conseil 20 %</div>
+                          <div class="pg-dli"><div class="pg-dld" style="background:rgba(247,249,252,0.2)"></div>Autre 22 %</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pg-tcard">
+                    <div class="pg-thead"><span>Projet</span><span>Statut</span><span>Avance</span></div>
+                    <div class="pg-trow"><span>CRM Phase 2</span><span><span class="pg-pill pg-pill-g">Livré</span></span><span>100 %</span></div>
+                    <div class="pg-trow"><span>Dashboard RH</span><span><span class="pg-pill pg-pill-o">En cours</span></span><span>68 %</span></div>
+                    <div class="pg-trow"><span>Portail client</span><span><span class="pg-pill pg-pill-t">Revue</span></span><span>85 %</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <a href="../a-propos.html">À propos</a>
-        <a href="../diagnostic.html">Diagnostic</a>
-        <a href="../blog/">Blog</a>
-        <a href="/ebook/">Ebook</a>
-        <a class="nav-cta" href="../contact.html">Contact</a>
-      </nav>
-    </header>
+      </div>
 
-    <main class="page-main">
-      <section class="page-hero service-hero" aria-labelledby="service-title">
-        <div class="page-hero-copy" data-animate>
-          <p class="eyebrow">Développement logiciel</p>
-          <h1 id="service-title">Un logiciel sur mesure pour centraliser, automatiser et piloter votre activité.</h1>
-          <p>
-            Quand les outils standards vous ralentissent, nous concevons une solution adaptée à vos
-            process : CRM, portail client, dashboard, gestion interne ou application métier.
-          </p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="../diagnostic.html?type=software">Étudier mon besoin</a>
-            <a class="button button-secondary" href="/ebook/">Lire l’ebook</a>
+      <div class="pg-scroll" aria-hidden="true">
+        <div class="pg-scroll-line"></div>Scroll
+      </div>
+    </section>
+
+    <!-- ══ METRICS ══ -->
+    <div class="pg-strip" aria-hidden="true">
+      <div class="pg-strip-inner">
+        <div class="pg-metric">
+          <div class="pg-mv">87<em>+</em></div>
+          <div class="pg-ml">projets livrés<br>depuis 2019</div>
+        </div>
+        <div class="pg-metric">
+          <div class="pg-mv">6 <em>sem</em></div>
+          <div class="pg-ml">délai moyen<br>de mise en ligne</div>
+        </div>
+        <div class="pg-metric">
+          <div class="pg-mv">100<em>%</em></div>
+          <div class="pg-ml">code propriétaire<br>zéro dépendance éditeur</div>
+        </div>
+        <div class="pg-metric">
+          <div class="pg-mv">3<em>×</em></div>
+          <div class="pg-ml">gain de productivité<br>moyen constaté</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ STICKY 3D TOUR ══ -->
+    <section class="pg-tour" id="pg-tour" aria-label="Notre approche produit">
+      <div class="pg-tour-pin">
+        <div class="pg-tour-glow" aria-hidden="true"></div>
+
+        <!-- Text panels -->
+        <div class="pg-panels" id="pg-panels">
+          <div class="pg-dots" id="pg-dots" aria-hidden="true">
+            <div class="pg-dot2 on" data-p="0"></div>
+            <div class="pg-dot2" data-p="1"></div>
+            <div class="pg-dot2" data-p="2"></div>
+          </div>
+
+          <div class="pg-panel on" data-idx="0">
+            <div class="pg-pn">01 — Audit</div>
+            <h2>On cartographie votre organisation avant d'écrire une ligne.</h2>
+            <p>Process métier, rôles, données, irritants — tout est analysé pour que le logiciel serve vraiment, pas juste techniquement.</p>
+            <div class="pg-tags">
+              <span class="pg-tag">Audit process</span>
+              <span class="pg-tag">Cartographie données</span>
+              <span class="pg-tag">Ateliers métier</span>
+            </div>
+          </div>
+
+          <div class="pg-panel" data-idx="1">
+            <div class="pg-pn">02 — Prototype</div>
+            <h2>Vous voyez l'outil avant le premier sprint de code.</h2>
+            <p>Maquettes interactives, tests utilisateurs, itérations rapides. Aucune surprise à la livraison — vous avez validé chaque écran.</p>
+            <div class="pg-tags">
+              <span class="pg-tag">Wireframes</span>
+              <span class="pg-tag">Prototype cliquable</span>
+              <span class="pg-tag">Tests utilisateurs</span>
+            </div>
+          </div>
+
+          <div class="pg-panel" data-idx="2">
+            <div class="pg-pn">03 — Livraison continue</div>
+            <h2>Sprints cadencés, démos bi-mensuelles, ajustements en temps réel.</h2>
+            <p>Chaque sprint délivre des fonctionnalités testables. Pas des promesses — des écrans que vous utilisez immédiatement.</p>
+            <div class="pg-tags">
+              <span class="pg-tag">Sprints 2 semaines</span>
+              <span class="pg-tag">Code propriétaire</span>
+              <span class="pg-tag">Tests automatisés</span>
+            </div>
           </div>
         </div>
-        <figure class="page-hero-media tilt-card" data-animate="scale">
-          <img
-            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80"
-            alt="Développement logiciel sur ordinateur avec code à l'écran"
-          />
-        </figure>
-      </section>
 
-      <section class="service-detail light-section" aria-labelledby="detail-title">
-        <div class="section-heading" data-animate>
-          <p class="eyebrow dark">Sur mesure</p>
-          <h2 id="detail-title">On construit l’outil autour de votre réalité opérationnelle.</h2>
+        <!-- 3D mockup (right) -->
+        <div class="pg-mside" aria-hidden="true">
+          <div class="pg-m3d" id="tour-mw">
+            <div class="pg-mockup">
+              <div class="pg-mbar">
+                <div class="pg-dot"></div><div class="pg-dot"></div><div class="pg-dot"></div>
+                <div class="pg-url"></div>
+              </div>
+              <div class="pg-app">
+                <nav class="pg-sb">
+                  <div class="pg-sb-logo">MBL</div>
+                  <div class="pg-sb-item a"><div class="pg-sb-icon"></div></div>
+                  <div class="pg-sb-item"><div class="pg-sb-icon"></div></div>
+                  <div class="pg-sb-item"><div class="pg-sb-icon"></div></div>
+                  <div class="pg-sb-item"><div class="pg-sb-icon"></div></div>
+                </nav>
+                <div class="pg-main">
+                  <div class="pg-krow">
+                    <div class="pg-k"><div class="pg-kl">Clients actifs</div><div class="pg-kv">1 284</div><div class="pg-kd">↑ +12 %</div></div>
+                    <div class="pg-k"><div class="pg-kl">CA mensuel</div><div class="pg-kv">48 k€</div><div class="pg-kd">↑ +8 %</div></div>
+                    <div class="pg-k"><div class="pg-kl">Tâches auto</div><div class="pg-kv">347</div><div class="pg-kd">↑ +34 %</div></div>
+                  </div>
+                  <div class="pg-crow">
+                    <div class="pg-cc">
+                      <div class="pg-cct">Activité — 6 mois</div>
+                      <div class="pg-bars">
+                        <div class="pg-bar" style="height:42%"></div>
+                        <div class="pg-bar" style="height:60%"></div>
+                        <div class="pg-bar" style="height:50%"></div>
+                        <div class="pg-bar" style="height:76%"></div>
+                        <div class="pg-bar" style="height:86%"></div>
+                        <div class="pg-bar" style="height:95%"></div>
+                      </div>
+                    </div>
+                    <div class="pg-cc">
+                      <div class="pg-cct">Répartition</div>
+                      <div class="pg-donut-w">
+                        <div class="pg-donut"></div>
+                        <div class="pg-dleg">
+                          <div class="pg-dli"><div class="pg-dld" style="background:var(--teal)"></div>Digital 58 %</div>
+                          <div class="pg-dli"><div class="pg-dld" style="background:var(--org)"></div>Conseil 20 %</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pg-tcard">
+                    <div class="pg-thead"><span>Projet</span><span>Statut</span><span>Avance</span></div>
+                    <div class="pg-trow"><span>CRM Phase 2</span><span><span class="pg-pill pg-pill-g">Livré</span></span><span>100 %</span></div>
+                    <div class="pg-trow"><span>Dashboard RH</span><span><span class="pg-pill pg-pill-o">En cours</span></span><span>68 %</span></div>
+                    <div class="pg-trow"><span>Portail client</span><span><span class="pg-pill pg-pill-t">Revue</span></span><span>85 %</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="detail-grid">
-          <article data-animate><span>01</span><h3>Audit métier</h3><p>Process, rôles, données, irritants et priorités sont cartographiés.</p></article>
-          <article data-animate style="--delay: 90ms"><span>02</span><h3>Prototype clair</h3><p>Vous visualisez l’outil avant de le développer complètement.</p></article>
-          <article data-animate style="--delay: 180ms"><span>03</span><h3>Interface utile</h3><p>Chaque écran aide à décider, suivre, saisir ou automatiser plus vite.</p></article>
-          <article data-animate style="--delay: 270ms"><span>04</span><h3>Évolution</h3><p>La solution peut grandir avec vos usages et vos nouvelles contraintes.</p></article>
+      </div>
+    </section>
+
+    <!-- ══ FEATURE DUO ══ -->
+    <div class="pg-duo">
+
+      <!-- Block 1 : Droits & rôles -->
+      <div class="pg-duo-block">
+        <div class="pg-duo-text">
+          <div class="pg-duo-label">Contrôle & sécurité</div>
+          <h2 class="pg-duo-h">Chaque utilisateur voit exactement ce dont il a besoin — et rien de plus.</h2>
+          <p class="pg-duo-p">Droits granulaires par rôle, par module, par action. Vous définissez les règles dans une interface claire, sans passer par un développeur.</p>
+          <ul class="pg-duo-list">
+            <li>Rôles personnalisables : Admin, Manager, Opérationnel…</li>
+            <li>Logs d'audit complets sur chaque action sensible</li>
+            <li>Données chiffrées AES-256, hébergement souverain</li>
+          </ul>
         </div>
-      </section>
+        <div class="pg-duo-vis" aria-hidden="true">
+          <div class="pg-perms">
+            <div class="pg-perms-head">
+              <span class="pg-perms-title">Gestion des droits</span>
+              <span class="pg-perms-add">+ Nouveau rôle</span>
+            </div>
+            <div class="pg-roles">
+              <div class="pg-role-hr">
+                <div class="pg-rc">Rôle</div>
+                <div class="pg-rc">Créer</div>
+                <div class="pg-rc">Modifier</div>
+                <div class="pg-rc">Voir</div>
+                <div class="pg-rc">Exporter</div>
+              </div>
+              <div class="pg-role-row">
+                <div class="pg-rc"><div class="pg-ravatar" style="background:rgba(28,143,163,0.2);color:var(--tl)">AD</div>Administrateur</div>
+                <div class="pg-rc"><div class="pg-tog on"></div></div>
+                <div class="pg-rc"><div class="pg-tog on"></div></div>
+                <div class="pg-rc"><div class="pg-tog on"></div></div>
+                <div class="pg-rc"><div class="pg-tog on"></div></div>
+              </div>
+              <div class="pg-role-row">
+                <div class="pg-rc"><div class="pg-ravatar" style="background:rgba(255,106,46,0.15);color:var(--org)">MG</div>Manager</div>
+                <div class="pg-rc"><div class="pg-tog on"></div></div>
+                <div class="pg-rc"><div class="pg-tog pt"></div></div>
+                <div class="pg-rc"><div class="pg-tog on"></div></div>
+                <div class="pg-rc"><div class="pg-tog off"></div></div>
+              </div>
+              <div class="pg-role-row">
+                <div class="pg-rc"><div class="pg-ravatar" style="background:rgba(124,58,237,0.15);color:#a78bfa">CM</div>Commercial</div>
+                <div class="pg-rc"><div class="pg-tog off"></div></div>
+                <div class="pg-rc"><div class="pg-tog off"></div></div>
+                <div class="pg-rc"><div class="pg-tog on"></div></div>
+                <div class="pg-rc"><div class="pg-tog pt"></div></div>
+              </div>
+            </div>
+            <div class="pg-perms-foot">Données chiffrées AES-256 · Logs complets</div>
+          </div>
+        </div>
+      </div>
 
-      <section class="final-cta" aria-labelledby="software-cta" data-animate="scale">
-        <p class="eyebrow">Logiciel métier</p>
-        <h2 id="software-cta">Arrêtez d’adapter votre entreprise à des outils qui ne vous ressemblent pas.</h2>
-        <a class="button button-primary" href="../diagnostic.html?type=software">Demander une étude</a>
-      </section>
-    </main>
+      <!-- Block 2 : Workflow / Automatisation (inversé) -->
+      <div class="pg-duo-block rev">
+        <div class="pg-duo-text">
+          <div class="pg-duo-label">Automatisation native</div>
+          <h2 class="pg-duo-h">Les tâches répétitives disparaissent. Votre équipe se concentre sur ce qui compte.</h2>
+          <p class="pg-duo-p">Construisez des workflows métier sans code : déclencheurs, conditions, actions — le tout depuis une interface visuelle que votre équipe maîtrise en 10 minutes.</p>
+          <ul class="pg-duo-list">
+            <li>Déclencheurs sur événement, calendrier ou condition</li>
+            <li>Notifications multi-canaux : email, SMS, webhook</li>
+            <li>Historique d'exécution et reprise en cas d'erreur</li>
+          </ul>
+        </div>
+        <div class="pg-duo-vis" aria-hidden="true">
+          <div class="pg-wflow">
+            <div class="pg-wf-head">
+              <span class="pg-wf-title">Workflow — Nouveau client</span>
+              <span class="pg-wf-live">Actif</span>
+            </div>
+            <div class="pg-nodes">
+              <div class="pg-node">
+                <div class="pg-node-left">
+                  <div class="pg-node-icon" style="background:rgba(28,143,163,0.15)">⚡</div>
+                  <div class="pg-node-line"></div>
+                </div>
+                <div class="pg-node-body">
+                  <div class="pg-node-name">Déclencheur</div>
+                  <div class="pg-node-desc">Formulaire de contact soumis</div>
+                  <span class="pg-npill pg-ntrig">Trigger</span>
+                </div>
+              </div>
+              <div class="pg-node">
+                <div class="pg-node-left">
+                  <div class="pg-node-icon" style="background:rgba(255,106,46,0.12)">📋</div>
+                  <div class="pg-node-line"></div>
+                </div>
+                <div class="pg-node-body">
+                  <div class="pg-node-name">Créer fiche CRM</div>
+                  <div class="pg-node-desc">Contact + entreprise + historique</div>
+                  <span class="pg-npill pg-nact">Action</span>
+                </div>
+              </div>
+              <div class="pg-node">
+                <div class="pg-node-left">
+                  <div class="pg-node-icon" style="background:rgba(124,58,237,0.13)">🔀</div>
+                  <div class="pg-node-line"></div>
+                </div>
+                <div class="pg-node-body">
+                  <div class="pg-node-name">Si CA estimé &gt; 5 000 €</div>
+                  <div class="pg-node-desc">Vérification automatique du profil</div>
+                  <span class="pg-npill pg-ncond">Condition</span>
+                </div>
+              </div>
+              <div class="pg-node">
+                <div class="pg-node-left">
+                  <div class="pg-node-icon" style="background:rgba(74,222,128,0.1)">🔔</div>
+                </div>
+                <div class="pg-node-body">
+                  <div class="pg-node-name">Notifier le commercial</div>
+                  <div class="pg-node-desc">Slack + email · priorité haute</div>
+                  <span class="pg-npill pg-nsend">Envoi</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    <footer class="site-footer">
-      <div class="footer-intro">
+    </div>
+
+    <!-- ══ PROCESS HORIZONTAL ══ -->
+    <section class="pg-proc" aria-labelledby="proc-title">
+      <div class="pg-proc-inner">
+        <div class="pg-proc-head">
+          <div class="pg-proc-tag">Notre méthode</div>
+          <h2 class="pg-proc-h" id="proc-title">De la feuille blanche à la mise en production.</h2>
+        </div>
+        <div class="pg-hsteps" id="pg-steps">
+          <div class="pg-hstep">
+            <div class="pg-hnum">01</div>
+            <h3>Audit & cadrage</h3>
+            <p>On comprend votre métier et vos vrais blocages avant d'ouvrir un éditeur de code.</p>
+          </div>
+          <div class="pg-hstep">
+            <div class="pg-hnum">02</div>
+            <h3>Prototype validé</h3>
+            <p>Maquettes interactives, tests utilisateurs — vous validez avant qu'on construise.</p>
+          </div>
+          <div class="pg-hstep">
+            <div class="pg-hnum">03</div>
+            <h3>Développement itératif</h3>
+            <p>Sprints courts, démos régulières, code propre et documenté à chaque étape.</p>
+          </div>
+          <div class="pg-hstep">
+            <div class="pg-hnum">04</div>
+            <h3>Lancement & évolution</h3>
+            <p>Formation équipe, documentation, support. L'outil grandit avec votre activité.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ CTA ══ -->
+    <section class="pg-cta" aria-labelledby="cta-title">
+      <div class="pg-cta-grid" aria-hidden="true"></div>
+      <div class="pg-cta-inner">
+        <div class="pg-badge" style="margin:0 auto 16px">Prêt à démarrer ?</div>
+        <h2 id="cta-title">Décrivez votre besoin. On s'occupe du reste.</h2>
+        <p>Un premier échange gratuit de 30 minutes pour analyser votre situation et vous proposer une piste concrète.</p>
+        <div class="pg-cta-acts">
+          <a class="pg-btn pg-btn-a" href="../diagnostic.html" style="font-size:1rem;padding:17px 36px;">
+            Faire le diagnostic
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+          <a class="pg-btn pg-btn-b" href="../contact.html" style="font-size:1rem;padding:17px 36px;">Nous contacter</a>
+        </div>
+        <p class="pg-cta-note">Sans engagement · Réponse sous 24 h · Code 100 % propriétaire</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer premium-footer" aria-label="Pied de page">
+    <div class="footer-shell">
+      <div>
         <a class="brand footer-brand" href="../" aria-label="MY BUSINESS LIFE">
-          <span class="brand-mark"><img src="../assets/logo.png" alt="Logo MY BUSINESS LIFE" /></span>
-          <span class="brand-copy"><strong>MY BUSINESS LIFE</strong><small>Digital, organisation, croissance.</small></span>
+          <span class="brand-mark"><img src="../assets/logo.png" alt="" /></span>
+          <span class="brand-copy"><strong>MY BUSINESS LIFE</strong><small>Digital, organisation, croissance</small></span>
         </a>
-        <p>Un partenaire digital premium pour clarifier, créer, réparer, automatiser et faire grandir vos projets avec méthode.</p>
+        <p>Des logiciels qui s'adaptent à votre organisation, pas l'inverse.</p>
       </div>
-      <nav class="footer-grid" aria-label="Navigation pied de page">
-        <div class="footer-column">
-          <strong>Particuliers</strong>
-          <a href="../particuliers.html">Accueil particuliers</a>
-          <a href="../services/reparation-ordinateur.html">Réparation ordinateur</a>
-          <a href="../contact.html">Demander de l’aide</a>
-        </div>
-        <div class="footer-column">
-          <strong>Professionnels</strong>
-          <a href="../professionnels.html">Accueil professionnels</a>
-          <a href="../services/developpement-web.html">Développement web</a>
-          <a href="../services/developpement-logiciel.html">Développement logiciel</a>
-          <a href="../services/automatisation.html">Automatisation</a>
-          <a href="../services/strategie-digitale.html">Stratégie digitale</a>
-        </div>
-        <div class="footer-column">
-          <strong>Ressources</strong>
-          <a href="../diagnostic.html">Diagnostic en ligne</a>
-          <a href="../blog/">Blog</a>
-          <a href="/ebook/">Ebook</a>
-          <a href="../contact.html">Contact</a>
-        </div>
-        <div class="footer-column">
-          <strong>Légal</strong>
-          <a href="../mentions-legales.html">Mentions légales</a>
-          <a href="../politique-confidentialite.html">Confidentialité</a>
-          <a href="../politique-cookies.html">Cookies</a>
-          <a href="../conditions-utilisation.html">Conditions d’utilisation</a>
-        </div>
-      </nav>
-      <div class="footer-bottom">
-        <p class="footer-note">© 2026 MY BUSINESS LIFE. Tous droits réservés.</p>
-        <p class="footer-note">Digital utile, design premium, exécution claire.</p>
+      <div class="footer-column">
+        <strong>Services</strong>
+        <a href="developpement-web.html">Développement web</a>
+        <a href="developpement-logiciel.html">Logiciel sur-mesure</a>
+        <a href="automatisation.html">Automatisation</a>
+        <a href="strategie-digitale.html">Stratégie digitale</a>
       </div>
-    </footer>
+      <div class="footer-column">
+        <strong>Ressources</strong>
+        <a href="../diagnostic.html">Diagnostic gratuit</a>
+        <a href="../contact.html">Contact</a>
+        <a href="../a-propos.html">À propos</a>
+      </div>
+      <div class="footer-column">
+        <strong>Légal</strong>
+        <a href="../mentions-legales.html">Mentions légales</a>
+        <a href="../politique-confidentialite.html">Confidentialité</a>
+        <a href="../politique-cookies.html">Cookies</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 MY BUSINESS LIFE. Tous droits réservés.</span>
+    </div>
+  </footer>
 
-    <script src="../script.js?v=18"></script>
-  </body>
+  <script src="../premium-site.js?v=30"></script>
+  <script>
+  (function () {
+    const noMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const lerp = (a, b, t) => a + (b - a) * t;
+
+    /* ── 1. Hero mockup: tilt → flat on scroll ── */
+    const heroMW = document.getElementById('hero-mw');
+    let hRX = 22, hRY = -18, hRZ = 2, hS = 0.88;
+    let hRX_t = hRX, hRY_t = hRY, hRZ_t = hRZ, hS_t = hS;
+
+    function updateHero() {
+      if (!heroMW) return;
+      const t = Math.max(0, Math.min(1, window.scrollY / (window.innerHeight * 0.65)));
+      hRX_t = lerp(22, 0, t);
+      hRY_t = lerp(-18, 0, t);
+      hRZ_t = lerp(2, 0, t);
+      hS_t  = lerp(0.88, 1, t);
+    }
+
+    /* ── 2. Sticky tour: 3 panels, 3D rotation ── */
+    const tour     = document.getElementById('pg-tour');
+    const tourMW   = document.getElementById('tour-mw');
+    const panels   = document.querySelectorAll('.pg-panel');
+    const dots     = document.querySelectorAll('.pg-dot2');
+
+    const states = [
+      { rx: 28, ry: -22, rz: 3,  s: 0.85 },
+      { rx: 10, ry: -6,  rz: 0.5,s: 0.94 },
+      { rx: 0,  ry:  0,  rz: 0,  s: 1.00 },
+    ];
+
+    let tRX = states[0].rx, tRY = states[0].ry, tRZ = states[0].rz, tS = states[0].s;
+    let tRX_t = tRX, tRY_t = tRY, tRZ_t = tRZ, tS_t = tS;
+    let curPanel = 0;
+
+    function activatePanel(idx) {
+      if (idx === curPanel) return;
+      curPanel = idx;
+      panels.forEach((p, i) => p.classList.toggle('on', i === idx));
+      dots.forEach((d, i) => d.classList.toggle('on', i === idx));
+    }
+
+    function updateTour() {
+      if (!tour) return;
+      const rect   = tour.getBoundingClientRect();
+      const total  = tour.offsetHeight - window.innerHeight;
+      const scrolled = -rect.top;
+      const prog   = Math.max(0, Math.min(1, scrolled / total));
+      const pp     = prog * (panels.length - 1);
+      const idx    = Math.min(Math.floor(pp + 0.15), panels.length - 1);
+      activatePanel(idx);
+      const frac   = pp - Math.floor(pp);
+      const from   = states[Math.min(Math.floor(pp), states.length - 1)];
+      const to     = states[Math.min(Math.ceil(pp), states.length - 1)];
+      tRX_t = from.rx + (to.rx - from.rx) * frac;
+      tRY_t = from.ry + (to.ry - from.ry) * frac;
+      tRZ_t = from.rz + (to.rz - from.rz) * frac;
+      tS_t  = from.s  + (to.s  - from.s)  * frac;
+    }
+
+    /* ── RAF loop ── */
+    function tick() {
+      const SP = 0.08;
+      if (heroMW && !noMotion) {
+        hRX = lerp(hRX, hRX_t, SP); hRY = lerp(hRY, hRY_t, SP);
+        hRZ = lerp(hRZ, hRZ_t, SP); hS  = lerp(hS,  hS_t,  SP);
+        heroMW.style.transform = `rotateX(${hRX.toFixed(2)}deg) rotateY(${hRY.toFixed(2)}deg) rotateZ(${hRZ.toFixed(2)}deg) scale(${hS.toFixed(3)})`;
+      }
+      if (tourMW && !noMotion) {
+        tRX = lerp(tRX, tRX_t, SP); tRY = lerp(tRY, tRY_t, SP);
+        tRZ = lerp(tRZ, tRZ_t, SP); tS  = lerp(tS,  tS_t,  SP);
+        tourMW.style.transform = `rotateX(${tRX.toFixed(2)}deg) rotateY(${tRY.toFixed(2)}deg) rotateZ(${tRZ.toFixed(2)}deg) scale(${tS.toFixed(3)})`;
+      }
+      requestAnimationFrame(tick);
+    }
+
+    let raf = false;
+    window.addEventListener('scroll', () => {
+      if (raf) return; raf = true;
+      requestAnimationFrame(() => { updateHero(); updateTour(); raf = false; });
+    }, { passive: true });
+
+    updateHero(); updateTour();
+    if (!noMotion) requestAnimationFrame(tick);
+
+    /* ── 3. Scroll reveal for process steps ── */
+    const steps = document.querySelectorAll('.pg-hstep');
+    if (steps.length && 'IntersectionObserver' in window) {
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); } });
+      }, { threshold: 0.3 });
+      steps.forEach(s => obs.observe(s));
+    }
+
+    /* ── 4. Nav scroll state ── */
+    const hdr = document.querySelector('.site-header');
+    if (hdr) {
+      window.addEventListener('scroll', () => {
+        hdr.classList.toggle('is-scrolled', window.scrollY > 12);
+      }, { passive: true });
+    }
+
+  })();
+  </script>
+
+</body>
 </html>
